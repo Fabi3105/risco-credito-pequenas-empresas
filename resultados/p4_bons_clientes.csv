@@ -1,0 +1,8 @@
+﻿grupo,empresas,participacao_pct,nova_divida_pct,fechou_pct
+A/B nas duas notas,142464,23.1,7.79,19.71
+A/B nas duas notas e fora das regras de política (definição oficial),123952,20.1,7.47,19.05
+"A/B nas duas notas, mas barrada por regra de política",18512,3.0,9.89,24.12
+todas as empresas do teste,616603,100.0,18.54,37.02
+regra: aberta há menos de 1 ano,100650,16.32,10.89,41.8
+regra: dívida ativa em cobrança,52235,8.47,45.07,56.43
+regra: excluída do Simples,31586,5.12,40.66,42.41

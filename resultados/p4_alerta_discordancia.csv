@@ -1,0 +1,5 @@
+﻿caso,empresas,nova_divida_real_pct,prevista_scorecard_pct,prevista_lgbm_pct,participacao_pct
+LightGBM vê risco bem maior (2+ faixas),13017,19.31,11.03,19.44,2.11
+LightGBM vê risco bem menor (2+ faixas),16107,9.44,20.48,9.79,2.61
+diferença de 1 faixa,211968,14.58,14.78,14.48,34.38
+mesma faixa,375511,21.13,20.74,21.09,60.9

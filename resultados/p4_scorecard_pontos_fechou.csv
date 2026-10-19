@@ -1,0 +1,175 @@
+﻿variavel,faixa,pontos,empresas_treino,amplitude_variavel
+porte_natureza,Demais · S.A. fechada,43.3483,3303.0,30.07
+porte_natureza,Demais · empresário individual,32.5358,2691.0,30.07
+porte_natureza,Demais · outra natureza,34.0176,15935.0,30.07
+porte_natureza,Demais · sociedade limitada,34.0465,42991.0,30.07
+porte_natureza,Demais · sociedade simples,27.9747,3225.0,30.07
+porte_natureza,EPP · empresário individual,53.5333,7000.0,30.07
+porte_natureza,EPP · outra natureza,36.8608,543.0,30.07
+porte_natureza,EPP · sociedade limitada,35.0267,62417.0,30.07
+porte_natureza,EPP · sociedade simples,36.811,1999.0,30.07
+porte_natureza,ME · empresário individual,40.9521,149855.0,30.07
+porte_natureza,ME · outra natureza,33.9646,1337.0,30.07
+porte_natureza,ME · sociedade limitada,26.3927,280649.0,30.07
+porte_natureza,ME · sociedade simples,23.4656,9425.0,30.07
+porte_natureza,MEI,33.2332,854410.0,30.07
+porte_natureza,outras (raras),34.6676,,30.07
+setor,01,29.3525,7761.0,38.47
+setor,02,34.4463,803.0,38.47
+setor,03,29.3859,429.0,38.47
+setor,08,33.5096,1022.0,38.47
+setor,10,29.1346,23179.0,38.47
+setor,11,33.659,592.0,38.47
+setor,13,36.295,6194.0,38.47
+setor,14,32.1824,23464.0,38.47
+setor,15,29.7039,2638.0,38.47
+setor,16,32.1117,4213.0,38.47
+setor,17,31.8202,1807.0,38.47
+setor,18,37.0015,5900.0,38.47
+setor,20,34.1464,1055.0,38.47
+setor,22,38.1286,1907.0,38.47
+setor,23,35.1107,5308.0,38.47
+setor,24,36.5701,286.0,38.47
+setor,25,36.0931,15422.0,38.47
+setor,26,36.3368,348.0,38.47
+setor,27,36.1409,570.0,38.47
+setor,28,41.4111,1456.0,38.47
+setor,29,40.0154,913.0,38.47
+setor,31,35.3023,9069.0,38.47
+setor,32,32.955,10112.0,38.47
+setor,33,36.5695,14856.0,38.47
+setor,35,32.7908,859.0,38.47
+setor,36,35.3739,275.0,38.47
+setor,37,34.8512,298.0,38.47
+setor,38,28.584,3562.0,38.47
+setor,41,26.8834,11570.0,38.47
+setor,42,30.8803,2768.0,38.47
+setor,43,31.6978,93089.0,38.47
+setor,45,37.3184,64614.0,38.47
+setor,46,31.1207,34311.0,38.47
+setor,47,28.7039,338593.0,38.47
+setor,49,31.0152,62646.0,38.47
+setor,50,30.4264,726.0,38.47
+setor,52,27.3772,20626.0,38.47
+setor,53,20.8307,18684.0,38.47
+setor,55,41.2238,5010.0,38.47
+setor,56,23.3552,115615.0,38.47
+setor,58,32.6445,11612.0,38.47
+setor,59,39.5327,7449.0,38.47
+setor,60,36.2375,504.0,38.47
+setor,61,29.5569,3803.0,38.47
+setor,62,36.7737,12882.0,38.47
+setor,63,33.0944,3901.0,38.47
+setor,64,50.7618,13057.0,38.47
+setor,66,44.337,5981.0,38.47
+setor,68,48.2588,17228.0,38.47
+setor,69,59.3025,16364.0,38.47
+setor,70,36.1045,8173.0,38.47
+setor,71,40.667,12413.0,38.47
+setor,72,33.9073,279.0,38.47
+setor,73,28.0902,48905.0,38.47
+setor,74,35.4262,14598.0,38.47
+setor,75,44.3275,1687.0,38.47
+setor,77,36.7597,10160.0,38.47
+setor,78,31.5308,806.0,38.47
+setor,79,36.763,6246.0,38.47
+setor,80,30.5542,2056.0,38.47
+setor,81,33.8423,9555.0,38.47
+setor,82,35.0468,70088.0,38.47
+setor,85,35.0443,51883.0,38.47
+setor,86,52.7009,36222.0,38.47
+setor,87,24.3321,9947.0,38.47
+setor,88,25.3505,745.0,38.47
+setor,90,41.5612,8476.0,38.47
+setor,93,36.7897,6642.0,38.47
+setor,94,31.6321,200.0,38.47
+setor,95,33.1858,22651.0,38.47
+setor,96,38.9954,91918.0,38.47
+setor,97,33.4014,15778.0,38.47
+setor,outras (raras),31.9717,,38.47
+uf,AC,31.3407,2688.0,14.55
+uf,AL,35.1138,12882.0,14.55
+uf,AM,30.9465,14248.0,14.55
+uf,AP,24.9272,2655.0,14.55
+uf,BA,35.3787,70313.0,14.55
+uf,CE,34.852,40492.0,14.55
+uf,DF,31.7359,25399.0,14.55
+uf,ES,36.9055,31992.0,14.55
+uf,GO,37.1031,52930.0,14.55
+uf,MA,34.3665,18704.0,14.55
+uf,MG,37.9199,153454.0,14.55
+uf,MS,37.372,19677.0,14.55
+uf,MT,35.211,27924.0,14.55
+uf,PA,30.6424,28204.0,14.55
+uf,PB,35.1274,17868.0,14.55
+uf,PE,34.8144,39260.0,14.55
+uf,PI,38.0714,12216.0,14.55
+uf,PR,38.39,103365.0,14.55
+uf,RJ,35.2848,130863.0,14.55
+uf,RN,36.7442,16570.0,14.55
+uf,RO,31.3089,8938.0,14.55
+uf,RR,34.1168,2397.0,14.55
+uf,RS,36.4079,93700.0,14.55
+uf,SC,39.1731,73295.0,14.55
+uf,SE,35.7303,9223.0,14.55
+uf,SP,39.4723,417566.0,14.55
+uf,TO,34.5399,8969.0,14.55
+uf,outras (raras),34.6805,,14.55
+simples,excluída do Simples,29.6555,73427.0,16.67
+simples,nunca optou / optante,46.3286,1362365.0,16.67
+simples,outras (raras),34.6805,,16.67
+idade,1 a 2 anos,19.884,222775.0,30.34
+idade,10 a 20 anos,50.2244,186117.0,30.34
+idade,2 a 3 anos,21.7273,184027.0,30.34
+idade,20 anos ou mais,49.4748,108630.0,30.34
+idade,3 a 5 anos,37.584,219534.0,30.34
+idade,5 a 10 anos,44.5518,280439.0,30.34
+idade,menos de 1 ano,25.9404,234270.0,30.34
+idade,outras (raras),34.6805,,30.34
+populacao_municipio,100 a 500 mil hab.,35.1676,430275.0,5.31
+populacao_municipio,20 a 100 mil hab.,37.9248,295917.0,5.31
+populacao_municipio,500 mil a 1 milhão hab.,33.7145,162118.0,5.31
+populacao_municipio,até 20 mil hab.,39.0292,139420.0,5.31
+populacao_municipio,mais de 1 milhão hab.,34.2405,408061.0,5.31
+populacao_municipio,outras (raras),34.6296,,5.31
+pib_per_capita_municipio,R$ 20 a 30 mil,35.1363,134200.0,1.82
+pib_per_capita_municipio,R$ 30 a 45 mil,35.7683,309068.0,1.82
+pib_per_capita_municipio,R$ 45 a 65 mil,36.9606,359643.0,1.82
+pib_per_capita_municipio,até R$ 20 mil,35.2579,96945.0,1.82
+pib_per_capita_municipio,mais de R$ 65 mil,36.9535,535935.0,1.82
+pib_per_capita_municipio,outras (raras),34.6296,,1.82
+capital_social,R$ 1 a 10 mil,35.0274,564895.0,8.62
+capital_social,R$ 10 a 50 mil,37.0423,236675.0,8.62
+capital_social,R$ 50 a 200 mil,35.9094,139734.0,8.62
+capital_social,até R$ 1 mil (inclui zero),31.7144,448825.0,8.62
+capital_social,mais de R$ 200 mil,40.332,45663.0,8.62
+capital_social,outras (raras),34.6805,,8.62
+atividades_secundarias,1 a 2,36.0703,462517.0,7.5
+atividades_secundarias,3 a 5,37.752,241327.0,7.5
+atividades_secundarias,6 ou mais,39.5134,162797.0,7.5
+atividades_secundarias,nenhuma,32.0094,569151.0,7.5
+atividades_secundarias,outras (raras),34.6805,,7.5
+filiais,1 a 2,35.7917,34104.0,26.88
+filiais,3 ou mais,50.8784,6801.0,26.88
+filiais,nenhuma,23.9945,1394887.0,26.88
+filiais,outras (raras),34.6805,,26.88
+socios_pf,1,36.3085,203013.0,18.71
+socios_pf,2,37.9307,169606.0,18.71
+socios_pf,3 ou mais,44.9061,40869.0,18.71
+socios_pf,nenhum,26.1999,1022304.0,18.71
+socios_pf,outras (raras),34.6805,,18.71
+socio_pj,não,36.2333,1422235.0,3.52
+socio_pj,sim,39.7508,13557.0,3.52
+socio_pj,outras (raras),34.6805,,3.52
+historico_socios,sem sócio pessoa física,26.1999,1022304.0,16.29
+historico_socios,sócio já fechou empresa deixando dívida,32.6133,22544.0,16.29
+historico_socios,sócio já fechou empresa sem dívida,40.6427,95688.0,16.29
+historico_socios,sócio tem outra empresa ativa sem dívida,42.4922,68631.0,16.29
+historico_socios,única empresa dos sócios / sócio tem outra empresa ativa com dívida,38.0775,226625.0,16.29
+historico_socios,outras (raras),34.6805,,16.29
+divida_ativa,em cobrança até R$ 10 mil / em cobrança de R$ 10 a 100 mil / em cobrança acima de R$ 100 mil,12.714,161170.0,36.53
+divida_ativa,sem dívida,49.2419,1226152.0,36.53
+divida_ativa,só parcelada ou garantida,48.7087,48470.0,36.53
+divida_ativa,outras (raras),34.6805,,36.53
+divida_previdenciaria,não / sim,41.3036,1435792.0,0.0
+divida_previdenciaria,outras (raras),34.6805,,0.0

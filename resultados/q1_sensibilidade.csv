@@ -1,0 +1,13 @@
+﻿grupo,sobrevive_1a_pct,sobrevive_2a_pct,sobrevive_3a_pct,sobrevive_5a_pct,sobrevive_10a_pct,empresas,definicao
+Demais,97.3,93.2,89.0,81.2,63.6,709085,baixada ou inapta (principal)
+EPP,96.3,91.7,86.6,77.1,54.9,685176,baixada ou inapta (principal)
+ME,95.6,89.9,84.0,72.4,43.8,4550392,baixada ou inapta (principal)
+MEI,86.6,78.9,67.0,49.1,23.4,18458857,baixada ou inapta (principal)
+Demais,97.3,93.6,90.0,83.7,72.5,709085,só baixa voluntária
+EPP,96.4,92.5,88.8,82.5,70.4,685176,só baixa voluntária
+ME,95.6,90.5,85.9,77.8,60.9,4550392,só baixa voluntária
+MEI,86.7,79.4,73.4,62.9,43.0,18458857,só baixa voluntária
+Demais,97.3,93.2,89.0,81.2,63.7,709014,sem baixas de ofício em massa
+EPP,96.3,91.7,86.6,77.1,54.9,685135,sem baixas de ofício em massa
+ME,95.6,89.9,84.0,72.4,43.8,4548955,sem baixas de ofício em massa
+MEI,86.0,77.9,65.4,49.7,24.6,17604545,sem baixas de ofício em massa

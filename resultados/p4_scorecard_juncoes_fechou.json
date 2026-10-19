@@ -1,0 +1,31 @@
+{
+ "porte_natureza": {},
+ "setor": {},
+ "uf": {},
+ "simples": {
+  "nunca optou": "nunca optou / optante",
+  "optante": "nunca optou / optante"
+ },
+ "idade": {},
+ "populacao_municipio": {},
+ "pib_per_capita_municipio": {},
+ "capital_social": {},
+ "atividades_secundarias": {},
+ "filiais": {},
+ "socios_pf": {},
+ "socio_pj": {},
+ "historico_socios": {
+  "única empresa dos sócios": "única empresa dos sócios / sócio tem outra empresa ativa com dívida",
+  "sócio tem outra empresa ativa com dívida": "única empresa dos sócios / sócio tem outra empresa ativa com dívida"
+ },
+ "divida_ativa": {
+  "em cobrança até R$ 10 mil": "em cobrança até R$ 10 mil / em cobrança de R$ 10 a 100 mil / em cobrança acima de R$ 100 mil",
+  "em cobrança de R$ 10 a 100 mil": "em cobrança até R$ 10 mil / em cobrança de R$ 10 a 100 mil / em cobrança acima de R$ 100 mil",
+  "em cobrança até R$ 10 mil / em cobrança de R$ 10 a 100 mil": "em cobrança até R$ 10 mil / em cobrança de R$ 10 a 100 mil / em cobrança acima de R$ 100 mil",
+  "em cobrança acima de R$ 100 mil": "em cobrança até R$ 10 mil / em cobrança de R$ 10 a 100 mil / em cobrança acima de R$ 100 mil"
+ },
+ "divida_previdenciaria": {
+  "não": "não / sim",
+  "sim": "não / sim"
+ }
+}

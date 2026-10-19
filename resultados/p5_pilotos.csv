@@ -1,0 +1,6 @@
+﻿piloto,porte,cenario,inad_hoje_pct,inad_esperada_pct,reducao_relativa_pct,concessoes_por_grupo
+1 nota no fluxo de concessão,Pequeno,otimista: redução da curva de aprovação (80% aprovados contra 100%),7.94,5.52,30.46,1678
+1 nota no fluxo de concessão,Pequeno,conservador: metade dessa redução (a política atual já filtra parte dos maus),7.94,6.73,15.23,7279
+1 nota no fluxo de concessão,Micro,otimista: redução da curva de aprovação (80% aprovados contra 100%),5.85,4.07,30.46,2324
+1 nota no fluxo de concessão,Micro,conservador: metade dessa redução (a política atual já filtra parte dos maus),5.85,4.96,15.23,10095
+2 oferta ativa (conversão),todos,conversão 2% → 3%,,,,3818

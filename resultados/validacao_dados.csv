@@ -1,0 +1,27 @@
+﻿tema,checagem,valor,tratamento
+tamanho,estabelecimentos,73809379,
+tamanho,empresas,70517438,
+tamanho,registros Simples/MEI,50806102,
+tamanho,vínculos de sócio,28495961,
+chaves,estabelecimentos duplicados (cnpj_basico+ordem),0,amostra do dígito 9; base inteira conferida: 0
+chaves,empresas na tabela montada (uma linha por CNPJ básico),70517438,
+chaves,CNPJ básico repetido na tabela montada,1,"1 caso (duas matrizes); mantido, efeito nulo"
+chaves,matrizes sem registro em empresas,0,
+datas,data de abertura nula,0,
+datas,abertura depois da extração,0,
+datas,abertura antes de 1900,4,
+datas,baixada/inapta sem data da situação,0,
+datas,data da situação antes da abertura (baixada/inapta),33,descartar da sobrevivência
+datas,baixada no mesmo dia da abertura,299311,"manter, com duração zero"
+datas,opção pelo MEI antes da abertura,105,
+campos,município nulo,0,
+campos,no exterior (UF EX),172526,excluir
+campos,CNAE principal sem tradução,0,
+campos,município sem tradução,0,
+campos,porte nulo,4112,
+campos,capital social negativo,0,
+campos,já optantes pelo MEI alguma vez,37412160,
+cruzamento,"devedores PJ na PGFN (cnpj_basico distintos, todos os tipos de devedor)",6779468,
+cruzamento,empresas com dívida ativa como devedor principal,6768106,
+cruzamento,devedores principais PGFN sem registro no CNPJ,468,
+cruzamento,meses no SCR.data (PJ),32,

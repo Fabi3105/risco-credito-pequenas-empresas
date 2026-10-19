@@ -1,0 +1,16 @@
+﻿variavel,faixa,coeficiente,pontos
+porte_natureza,MEI,0.224779,27.85
+setor,47,0.10412,31.33
+uf,ES,-0.153591,38.76
+simples,optante / excluída do Simples,0.126018,30.7
+idade,5 a 10 anos,0.00661,34.14
+populacao_municipio,500 mil a 1 milhão hab.,0.100332,31.44
+pib_per_capita_municipio,mais de R$ 65 mil,-0.031138,35.23
+capital_social,R$ 10 a 50 mil,0.007421,34.12
+atividades_secundarias,3 a 5,0.037571,33.25
+filiais,nenhuma,-0.256147,41.72
+socios_pf,nenhum,-0.153893,38.77
+socio_pj,não,0.174309,29.3
+historico_socios,sem sócio pessoa física,-0.153893,38.77
+divida_ativa,sem dívida,-1.579889,79.92
+divida_previdenciaria,não,-0.180979,39.55

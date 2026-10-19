@@ -1,0 +1,9 @@
+﻿etapa,empresas,participacao_pct,nova_divida_pct,fechou_pct,pct_das_aprovaveis
+recusa: faixa E da nota de dívida (abaixo do corte dos 80%),119416,19.3668,42.1099,46.1002,24.0183
+análise manual: regra de política ou divergência forte,130086,21.0972,11.4893,39.0865,26.1644
+  motivo: aberta há menos de 1 ano,100224,16.2542,10.7948,41.8632,20.1582
+  motivo: excluída do Simples,11744,1.9046,14.3818,31.6757,2.3621
+  motivo: dívida ativa em cobrança,2676,0.434,14.0135,45.2541,0.5382
+  motivo: só divergência forte,15442,2.5044,13.3597,25.6314,3.1059
+  fila sem as empresas novas (se elas tiverem regra automática),29862,4.843,13.8202,29.7669,6.0062
+aprovação pela nota (sem análise manual),367101,59.536,13.3639,33.3358,73.8356

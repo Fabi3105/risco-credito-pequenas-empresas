@@ -1,0 +1,26 @@
+{
+ "porte_natureza": {},
+ "setor": {},
+ "uf": {},
+ "simples": {
+  "optante": "optante / excluída do Simples",
+  "excluída do Simples": "optante / excluída do Simples"
+ },
+ "idade": {},
+ "populacao_municipio": {},
+ "pib_per_capita_municipio": {},
+ "capital_social": {},
+ "atividades_secundarias": {},
+ "filiais": {},
+ "socios_pf": {},
+ "socio_pj": {},
+ "historico_socios": {
+  "sócio tem outra empresa ativa sem dívida": "sócio tem outra empresa ativa sem dívida / sócio já fechou empresa sem dívida",
+  "sócio já fechou empresa sem dívida": "sócio tem outra empresa ativa sem dívida / sócio já fechou empresa sem dívida"
+ },
+ "divida_ativa": {
+  "só parcelada ou garantida": "só parcelada ou garantida / em cobrança até R$ 10 mil",
+  "em cobrança até R$ 10 mil": "só parcelada ou garantida / em cobrança até R$ 10 mil"
+ },
+ "divida_previdenciaria": {}
+}

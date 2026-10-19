@@ -1,0 +1,85 @@
+﻿caracteristica,valor,empresas,fecha5_pct,razao_mesmo_porte,fecha5_divida_pct,razao_divida_mesmo_porte
+porte na abertura,Demais,322167,19.006,1.0,0.868,1.0
+porte na abertura,EPP,343793,24.348,1.0,3.292,1.0
+porte na abertura,ME,2188834,30.071,1.0,3.805,1.0
+porte na abertura,MEI,10333249,52.16,1.0,4.857,1.0
+setor (seção CNAE),A Agropecuária,64151,44.687,1.061,3.652,0.88
+setor (seção CNAE),B Extração,4457,23.02,0.816,1.548,0.481
+setor (seção CNAE),C Indústria,1177495,45.859,0.938,4.491,0.96
+setor (seção CNAE),"D/E Energia, água e resíduos",41217,45.962,1.018,3.581,0.842
+setor (seção CNAE),F Construção,1059562,44.728,0.922,4.549,0.978
+setor (seção CNAE),G Comércio,3830033,48.333,1.032,4.854,1.062
+setor (seção CNAE),H Transporte,983785,48.592,0.994,5.626,1.201
+setor (seção CNAE),I Alojamento e alimentação,1381567,56.104,1.143,6.19,1.317
+setor (seção CNAE),J Informação e comunicação,311447,42.319,0.978,2.609,0.6
+setor (seção CNAE),K Financeiro,110144,20.961,0.89,1.011,0.505
+setor (seção CNAE),L Imobiliário,86677,16.748,0.607,1.326,0.455
+setor (seção CNAE),M Profissionais e técnicas,942033,46.51,1.071,3.935,0.932
+setor (seção CNAE),N Administrativas,858731,45.002,0.996,3.627,0.813
+setor (seção CNAE),P Educação,494407,48.796,1.01,2.942,0.633
+setor (seção CNAE),Q Saúde,333290,34.764,0.942,2.732,0.696
+setor (seção CNAE),R Artes e lazer,142445,41.992,0.927,3.285,0.731
+setor (seção CNAE),S Outros serviços,1366602,45.011,0.885,4.434,0.926
+natureza jurídica,EIRELI,98772,93.877,3.228,9.345,2.614
+natureza jurídica,Empresário individual,10843722,52.19,1.038,4.856,1.019
+natureza jurídica,Outras,111890,19.537,0.991,0.329,0.309
+natureza jurídica,S.A. fechada,13897,9.362,0.487,0.331,0.371
+natureza jurídica,Sociedade limitada,2090589,19.73,0.605,3.006,0.816
+natureza jurídica,Sociedade simples limitada,29173,17.993,0.701,0.792,0.287
+tamanho da cidade,1 até 20 mil,1209673,45.516,0.953,3.804,0.824
+tamanho da cidade,2 20 a 100 mil,2708582,45.925,0.971,4.364,0.952
+tamanho da cidade,3 100 a 500 mil,3847580,47.453,1.004,4.796,1.049
+tamanho da cidade,4 mais de 500 mil,5422208,47.446,1.023,4.62,1.029
+capital social (valor atual),0 zero,23910,25.943,1.363,0.042,0.048
+capital social (valor atual),1 até R$ 1 mil,4349109,55.261,1.087,4.617,0.967
+capital social (valor atual),2 R$ 1 a 10 mil,5690869,48.456,0.99,4.708,1.008
+capital social (valor atual),3 R$ 10 a 50 mil,1782401,37.237,0.888,4.407,1.024
+capital social (valor atual),4 R$ 50 a 200 mil,1103816,29.684,0.874,4.266,1.12
+capital social (valor atual),5 mais de R$ 200 mil,237938,14.483,0.499,2.08,0.726
+atividades secundárias,0 nenhuma,5516305,54.081,1.11,4.638,1.003
+atividades secundárias,1 1 a 2,4229422,45.906,0.984,4.679,1.03
+atividades secundárias,2 3 a 5,2079817,39.197,0.871,4.438,0.998
+atividades secundárias,3 6 ou mais,1362499,33.238,0.758,3.909,0.894
+tem e-mail,false,2185569,54.378,1.137,3.757,0.818
+tem e-mail,true,11002474,45.485,0.972,4.701,1.037
+tem telefone,true,13188026,46.959,1.0,4.544,1.0
+tem nome fantasia,false,7808977,36.009,0.737,3.287,0.709
+tem nome fantasia,true,5379066,62.854,1.422,6.37,1.443
+Simples Nacional na abertura,false,1306945,17.996,0.599,1.779,0.534
+Simples Nacional na abertura,true,11881098,50.145,1.027,4.848,1.037
+número de sócios PF,0 sem quadro de sócios (MEI/individual),10863071,52.142,1.039,4.847,1.019
+número de sócios PF,1 um sócio,1464293,19.291,0.578,3.534,0.959
+número de sócios PF,2 dois sócios,694890,30.049,1.009,2.77,0.8
+número de sócios PF,3 três ou mais,165789,22.574,0.865,1.047,0.383
+histórico dos sócios (C1),0 primeira empresa dos sócios,1269595,21.426,0.617,3.436,0.892
+histórico dos sócios (C1),1 sócio já tem outra empresa ativa,592074,24.203,0.855,2.949,0.904
+histórico dos sócios (C1),2 sócio já fechou empresa (sem dívida),445473,24.466,0.869,2.369,0.769
+histórico dos sócios (C1),3 sócio já fechou empresa com dívida ativa,17830,24.593,0.851,6.102,1.885
+histórico dos sócios (C1),sem quadro de sócios,10863071,52.142,1.039,4.847,1.019
+região (UF),AC,24843,52.337,1.138,6.143,1.357
+região (UF),AL,120066,49.469,1.045,5.595,1.219
+região (UF),AM,126916,48.61,1.04,5.716,1.256
+região (UF),AP,24487,51.68,1.12,6.387,1.41
+região (UF),BA,628947,47.027,0.989,4.833,1.05
+região (UF),CE,370052,48.848,1.022,5.174,1.123
+região (UF),DF,258007,50.338,1.096,5.468,1.221
+região (UF),ES,310713,46.791,0.977,4.679,1.015
+região (UF),GO,473998,46.418,1.0,4.907,1.082
+região (UF),MA,159417,44.944,0.988,5.265,1.169
+região (UF),MG,1449773,47.283,0.99,4.257,0.926
+região (UF),MS,176191,44.998,0.952,4.922,1.076
+região (UF),MT,244033,45.892,0.998,4.766,1.06
+região (UF),PA,268159,49.59,1.046,5.383,1.172
+região (UF),PB,167460,47.7,0.988,4.605,0.992
+região (UF),PE,393991,50.222,1.06,5.19,1.134
+região (UF),PI,98381,42.428,0.919,4.693,1.036
+região (UF),PR,889727,45.161,0.979,4.499,0.999
+região (UF),RJ,1352760,48.204,0.999,4.505,0.98
+região (UF),RN,155192,46.8,0.985,5.419,1.179
+região (UF),RO,80263,49.079,1.047,5.487,1.203
+região (UF),RR,19934,48.405,1.028,5.654,1.235
+região (UF),RS,800948,47.621,1.013,4.415,0.968
+região (UF),SC,620951,44.492,0.959,4.298,0.953
+região (UF),SE,84448,48.901,1.046,5.2,1.139
+região (UF),SP,3805475,46.251,0.998,4.139,0.922
+região (UF),TO,82911,46.845,0.999,5.169,1.134

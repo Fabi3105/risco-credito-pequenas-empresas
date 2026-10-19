@@ -1,0 +1,31 @@
+﻿alvo,modelo,grupo,n_teste,taxa,auc,gini,ks
+y_nova_divida,geral avaliado na seção,A,3883,0.1617,0.7442,0.4884,0.363
+y_nova_divida,próprio da seção,A,3883,0.1617,0.7311,0.4622,0.3542
+y_nova_divida,geral avaliado na seção,C,56000,0.2051,0.7504,0.5008,0.3683
+y_nova_divida,próprio da seção,C,56000,0.2051,0.7467,0.4935,0.3625
+y_nova_divida,geral avaliado na seção,F,46532,0.2203,0.7168,0.4336,0.3179
+y_nova_divida,próprio da seção,F,46532,0.2203,0.7119,0.4238,0.3108
+y_nova_divida,geral avaliado na seção,G,187173,0.1938,0.737,0.474,0.3343
+y_nova_divida,próprio da seção,G,187173,0.1938,0.7366,0.4733,0.3338
+y_nova_divida,geral avaliado na seção,H,43817,0.1953,0.7175,0.435,0.3044
+y_nova_divida,próprio da seção,H,43817,0.1953,0.7126,0.4251,0.2933
+y_nova_divida,geral avaliado na seção,I,51864,0.2229,0.7104,0.4207,0.3004
+y_nova_divida,próprio da seção,I,51864,0.2229,0.7067,0.4134,0.2981
+y_nova_divida,geral avaliado na seção,J,17002,0.1357,0.7431,0.4861,0.3648
+y_nova_divida,próprio da seção,J,17002,0.1357,0.7236,0.4472,0.3318
+y_nova_divida,geral avaliado na seção,K,8294,0.0803,0.8539,0.7077,0.5566
+y_nova_divida,próprio da seção,K,8294,0.0803,0.8362,0.6724,0.5048
+y_nova_divida,geral avaliado na seção,L,7397,0.1167,0.7902,0.5804,0.4319
+y_nova_divida,próprio da seção,L,7397,0.1167,0.7746,0.5492,0.4058
+y_nova_divida,geral avaliado na seção,M,44170,0.1698,0.7399,0.4798,0.3382
+y_nova_divida,próprio da seção,M,44170,0.1698,0.7347,0.4693,0.3336
+y_nova_divida,geral avaliado na seção,N,42631,0.1653,0.7465,0.493,0.3597
+y_nova_divida,próprio da seção,N,42631,0.1653,0.7399,0.4799,0.3533
+y_nova_divida,geral avaliado na seção,P,22115,0.1442,0.7269,0.4537,0.3483
+y_nova_divida,próprio da seção,P,22115,0.1442,0.7086,0.4172,0.3164
+y_nova_divida,geral avaliado na seção,Q,20063,0.1338,0.7672,0.5344,0.3792
+y_nova_divida,próprio da seção,Q,20063,0.1338,0.7538,0.5077,0.3698
+y_nova_divida,geral avaliado na seção,R,6585,0.1472,0.722,0.4441,0.3301
+y_nova_divida,próprio da seção,R,6585,0.1472,0.683,0.366,0.2869
+y_nova_divida,geral avaliado na seção,S,56175,0.1745,0.7051,0.4102,0.2935
+y_nova_divida,próprio da seção,S,56175,0.1745,0.6981,0.3961,0.2803

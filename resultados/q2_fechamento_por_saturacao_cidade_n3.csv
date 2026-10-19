@@ -1,0 +1,21 @@
+﻿cidade,faixa,empresas,fecha5_pct,razao_obs_esp,fecha5_divida_pct,razao_obs_esp_divida
+1. até 20 mil,1. menos da metade do esperado,144316,46.3,0.973,3.8,0.836
+1. até 20 mil,"2. 0,5 a 0,8",194838,45.6,0.945,3.7,0.78
+1. até 20 mil,"3. 0,8 a 1,25 (no esperado)",324558,45.7,0.944,3.8,0.797
+1. até 20 mil,"4. 1,25 a 2",302653,45.9,0.953,3.9,0.825
+1. até 20 mil,5. mais do dobro do esperado,243259,44.3,0.977,3.8,0.878
+2. 20 a 100 mil,1. menos da metade do esperado,175780,46.6,0.998,4.4,0.975
+2. 20 a 100 mil,"2. 0,5 a 0,8",373419,46.7,0.972,4.4,0.929
+2. 20 a 100 mil,"3. 0,8 a 1,25 (no esperado)",877472,47.1,0.974,4.5,0.94
+2. 20 a 100 mil,"4. 1,25 a 2",842107,46.0,0.972,4.4,0.954
+2. 20 a 100 mil,5. mais do dobro do esperado,439677,42.5,0.972,4.0,0.954
+3. 100 a 500 mil,1. menos da metade do esperado,111655,46.5,1.042,4.5,1.093
+3. 100 a 500 mil,"2. 0,5 a 0,8",470652,48.4,1.014,4.9,1.063
+3. 100 a 500 mil,"3. 0,8 a 1,25 (no esperado)",1513542,48.8,1.007,4.9,1.04
+3. 100 a 500 mil,"4. 1,25 a 2",1317793,47.2,1.001,4.8,1.044
+3. 100 a 500 mil,5. mais do dobro do esperado,433764,42.8,0.987,4.2,1.017
+4. mais de 500 mil,1. menos da metade do esperado,138702,45.4,1.06,5.0,1.255
+4. mais de 500 mil,"2. 0,5 a 0,8",880370,47.8,1.026,4.7,1.051
+4. mais de 500 mil,"3. 0,8 a 1,25 (no esperado)",3094438,48.1,1.017,4.6,1.018
+4. mais de 500 mil,"4. 1,25 a 2",1149233,47.0,1.016,4.6,1.053
+4. mais de 500 mil,5. mais do dobro do esperado,159183,39.2,1.036,3.6,1.079

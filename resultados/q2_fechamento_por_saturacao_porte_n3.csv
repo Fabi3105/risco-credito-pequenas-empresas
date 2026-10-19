@@ -1,0 +1,21 @@
+﻿grupo,faixa,empresas,fecha5_pct,razao_obs_esp,fecha5_divida_pct,razao_obs_esp_divida
+Demais,1. menos da metade do esperado,16175,18.1,1.053,0.9,1.237
+Demais,"2. 0,5 a 0,8",44943,19.5,1.002,1.0,1.037
+Demais,"3. 0,8 a 1,25 (no esperado)",115373,21.4,1.046,1.0,1.017
+Demais,"4. 1,25 a 2",71390,17.5,0.951,0.8,0.934
+Demais,5. mais do dobro do esperado,74087,16.6,0.953,0.6,0.945
+EPP,1. menos da metade do esperado,15898,24.6,1.034,2.9,1.007
+EPP,"2. 0,5 a 0,8",51680,24.8,1.009,3.6,1.049
+EPP,"3. 0,8 a 1,25 (no esperado)",154345,26.6,1.049,3.6,1.014
+EPP,"4. 1,25 a 2",76579,21.9,0.929,3.0,0.96
+EPP,5. mais do dobro do esperado,45185,20.3,0.912,2.6,0.941
+ME,1. menos da metade do esperado,98420,29.3,1.007,3.1,0.9
+ME,"2. 0,5 a 0,8",293596,29.7,0.978,3.7,0.946
+ME,"3. 0,8 a 1,25 (no esperado)",905697,31.1,1.007,4.0,1.012
+ME,"4. 1,25 a 2",605328,29.5,0.998,3.8,1.024
+ME,5. mais do dobro do esperado,285541,28.7,1.003,3.4,0.999
+MEI,1. menos da metade do esperado,439960,51.8,1.014,4.9,1.041
+MEI,"2. 0,5 a 0,8",1529060,52.5,1.007,4.9,1.008
+MEI,"3. 0,8 a 1,25 (no esperado)",4634595,52.7,1.002,4.9,0.996
+MEI,"4. 1,25 a 2",2858489,51.7,0.996,4.9,1.005
+MEI,5. mais do dobro do esperado,871070,50.4,0.984,4.5,0.969

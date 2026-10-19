@@ -1,0 +1,189 @@
+﻿variavel,faixa,de_incluso,ate_exclusive
+idade_anos,"de −∞ até 0,624",-inf,0.62422996759414673
+idade_anos,"de 0,624 até 1,23",0.62422996759414673,1.2265571355819702
+idade_anos,"de 1,23 até 1,88",1.2265571355819702,1.878165602684021
+idade_anos,"de 1,88 até 2,56",1.878165602684021,2.5626282691955566
+idade_anos,"de 2,56 até 3,64",2.5626282691955566,3.638603687286377
+idade_anos,"de 3,64 até 5,01",3.638603687286377,5.0130047798156738
+idade_anos,"de 5,01 até 7,1",5.0130047798156738,7.1047229766845703
+idade_anos,"de 7,1 até 10,2",7.1047229766845703,10.187542915344238
+idade_anos,"de 10,2 até 16,2",10.187542915344238,16.246406555175781
+idade_anos,"de 16,2 até ∞",16.246406555175781,inf
+ln_pop,de −∞ até 20.680 habitantes,-inf,9.9369220733642578
+ln_pop,de 20.680 até 47.059 habitantes,9.9369220733642578,10.759167671203613
+ln_pop,de 47.059 até 97.986 habitantes,10.759167671203613,11.492579460144043
+ln_pop,de 97.986 até 175.791 habitantes,11.492579460144043,12.077051162719727
+ln_pop,de 175.791 até 313.097 habitantes,12.077051162719727,12.654268264770508
+ln_pop,de 313.097 até 499.235 habitantes,12.654268264770508,13.120831489562988
+ln_pop,de 499.235 até 884.472 habitantes,13.120831489562988,13.692746162414551
+ln_pop,de 884.472 até 2.365.950 habitantes,13.692746162414551,14.676690101623535
+ln_pop,de 2.365.950 até 6.470.556 habitantes,14.676690101623535,15.682772636413574
+ln_pop,de 6.470.556 até ∞ habitantes,15.682772636413574,inf
+ln_pibpc,de −∞ até 24.160 R$ de PIB per capita,-inf,10.092456817626953
+ln_pibpc,de 24.160 até 31.856 R$ de PIB per capita,10.092456817626953,10.368978500366211
+ln_pibpc,de 31.856 até 39.457 R$ de PIB per capita,10.368978500366211,10.582962989807129
+ln_pibpc,de 39.457 até 47.518 R$ de PIB per capita,10.582962989807129,10.768866539001465
+ln_pibpc,de 47.518 até 55.030 R$ de PIB per capita,10.768866539001465,10.915629386901855
+ln_pibpc,de 55.030 até 64.672 R$ de PIB per capita,10.915629386901855,11.077079772949219
+ln_pibpc,de 64.672 até 71.540 R$ de PIB per capita,11.077079772949219,11.178005218505859
+ln_pibpc,de 71.540 até 86.361 R$ de PIB per capita,11.178005218505859,11.366291999816895
+ln_pibpc,de 86.361 até 91.386 R$ de PIB per capita,11.366291999816895,11.4228515625
+ln_pibpc,de 91.386 até ∞ R$ de PIB per capita,11.4228515625,inf
+ln_saturacao,"de −∞ até 0,685 observadas ÷ esperadas",-inf,-0.37770748138427734
+ln_saturacao,"de 0,685 até 0,827 observadas ÷ esperadas",-0.37770748138427734,-0.18938656151294708
+ln_saturacao,"de 0,827 até 0,909 observadas ÷ esperadas",-0.18938656151294708,-0.095330707728862762
+ln_saturacao,"de 0,909 até 0,997 observadas ÷ esperadas",-0.095330707728862762,-0.0026598568074405193
+ln_saturacao,"de 0,997 até 1,09 observadas ÷ esperadas",-0.0026598568074405193,0.086855433881282806
+ln_saturacao,"de 1,09 até 1,19 observadas ÷ esperadas",0.086855433881282806,0.17008575797080994
+ln_saturacao,"de 1,19 até 1,31 observadas ÷ esperadas",0.17008575797080994,0.26876023411750793
+ln_saturacao,"de 1,31 até 1,49 observadas ÷ esperadas",0.26876023411750793,0.39690160751342773
+ln_saturacao,"de 1,49 até 1,83 observadas ÷ esperadas",0.39690160751342773,0.60403227806091309
+ln_saturacao,"de 1,83 até ∞ observadas ÷ esperadas",0.60403227806091309,inf
+ln_capital,de −∞ até 50 R$ de capital social,-inf,3.9318256378173828
+ln_capital,de 50 até 1.000 R$ de capital social,3.9318256378173828,6.908754825592041
+ln_capital,de 1.000 até 3.000 R$ de capital social,6.908754825592041,8.0067005157470703
+ln_capital,de 3.000 até 5.000 R$ de capital social,8.0067005157470703,8.5173931121826172
+ln_capital,de 5.000 até 8.000 R$ de capital social,8.5173931121826172,8.9873218536376953
+ln_capital,de 8.000 até 10.000 R$ de capital social,8.9873218536376953,9.2104406356811523
+ln_capital,de 10.000 até 30.000 R$ de capital social,9.2104406356811523,10.308985710144043
+ln_capital,de 30.000 até 93.700 R$ de capital social,10.308985710144043,11.447864532470703
+ln_capital,de 93.700 até ∞ R$ de capital social,11.447864532470703,inf
+n_cnae_sec,de −∞ até 0,-inf,0
+n_cnae_sec,de 0 até 1,0,1
+n_cnae_sec,de 1 até 2,1,2
+n_cnae_sec,de 2 até 4,2,4
+n_cnae_sec,de 4 até 6,4,6
+n_cnae_sec,de 6 até ∞,6,inf
+tem_email,de −∞ até 0,-inf,0
+tem_email,de 0 até 1,0,1
+tem_email,de 1 até ∞,1,inf
+tem_telefone,de −∞ até 1,-inf,1
+tem_telefone,de 1 até ∞,1,inf
+tem_fantasia,de −∞ até 0,-inf,0
+tem_fantasia,de 0 até 1,0,1
+tem_fantasia,de 1 até ∞,1,inf
+mei_excluido,de −∞ até 0,-inf,0
+mei_excluido,= 0,0,1.0000000000000001e-09
+mei_excluido,acima de 0 até 1,1.0000000000000001e-09,1
+mei_excluido,de 1 até ∞,1,inf
+n_filiais,de −∞ até 0,-inf,0
+n_filiais,= 0,0,1.0000000000000001e-09
+n_filiais,acima de 0 até 1,1.0000000000000001e-09,1
+n_filiais,de 1 até 2,1,2
+n_filiais,de 2 até 4,2,4
+n_filiais,de 4 até ∞,4,inf
+n_socios_pf,de −∞ até 0,-inf,0
+n_socios_pf,= 0,0,1.0000000000000001e-09
+n_socios_pf,acima de 0 até 1,1.0000000000000001e-09,1
+n_socios_pf,de 1 até 2,1,2
+n_socios_pf,de 2 até ∞,2,inf
+n_socios_pj,de −∞ até 0,-inf,0
+n_socios_pj,= 0,0,1.0000000000000001e-09
+n_socios_pj,acima de 0 até 1,1.0000000000000001e-09,1
+n_socios_pj,de 1 até 2,1,2
+n_socios_pj,de 2 até ∞,2,inf
+faixa_etaria_max,de −∞ até 4,-inf,4
+faixa_etaria_max,de 4 até 5,4,5
+faixa_etaria_max,de 5 até 6,5,6
+faixa_etaria_max,de 6 até 7,6,7
+faixa_etaria_max,de 7 até ∞,7,inf
+faixa_etaria_min,de −∞ até 3,-inf,3
+faixa_etaria_min,de 3 até 4,3,4
+faixa_etaria_min,de 4 até 5,4,5
+faixa_etaria_min,de 5 até 6,5,6
+faixa_etaria_min,de 6 até ∞,6,inf
+n_outras,de −∞ até 0,-inf,0
+n_outras,de 0 até 1,0,1
+n_outras,de 1 até 2,1,2
+n_outras,de 2 até 3,2,3
+n_outras,de 3 até 7,3,7
+n_outras,de 7 até ∞,7,inf
+n_outras_fechadas,de −∞ até 0,-inf,0
+n_outras_fechadas,= 0,0,1.0000000000000001e-09
+n_outras_fechadas,acima de 0 até 1,1.0000000000000001e-09,1
+n_outras_fechadas,de 1 até 2,1,2
+n_outras_fechadas,de 2 até 3,2,3
+n_outras_fechadas,de 3 até 4,3,4
+n_outras_fechadas,de 4 até ∞,4,inf
+n_outras_fechadas_divida,de −∞ até 0,-inf,0
+n_outras_fechadas_divida,= 0,0,1.0000000000000001e-09
+n_outras_fechadas_divida,acima de 0 até 1,1.0000000000000001e-09,1
+n_outras_fechadas_divida,de 1 até 2,1,2
+n_outras_fechadas_divida,de 2 até ∞,2,inf
+n_outras_ativas,de −∞ até 0,-inf,0
+n_outras_ativas,= 0,0,1.0000000000000001e-09
+n_outras_ativas,acima de 0 até 1,1.0000000000000001e-09,1
+n_outras_ativas,de 1 até 2,1,2
+n_outras_ativas,de 2 até 3,2,3
+n_outras_ativas,de 3 até 4,3,4
+n_outras_ativas,de 4 até 5,4,5
+n_outras_ativas,de 5 até 10,5,10
+n_outras_ativas,de 10 até ∞,10,inf
+n_outras_ativas_divida,de −∞ até 0,-inf,0
+n_outras_ativas_divida,= 0,0,1.0000000000000001e-09
+n_outras_ativas_divida,acima de 0 até 1,1.0000000000000001e-09,1
+n_outras_ativas_divida,de 1 até 2,1,2
+n_outras_ativas_divida,de 2 até 3,2,3
+n_outras_ativas_divida,de 3 até 4,3,4
+n_outras_ativas_divida,de 4 até ∞,4,inf
+mudou_socio_12m,de −∞ até 0,-inf,0
+mudou_socio_12m,= 0,0,1.0000000000000001e-09
+mudou_socio_12m,acima de 0 até 1,1.0000000000000001e-09,1
+mudou_socio_12m,de 1 até ∞,1,inf
+n_inscricoes_pgfn,de −∞ até 0,-inf,0
+n_inscricoes_pgfn,= 0,0,1.0000000000000001e-09
+n_inscricoes_pgfn,acima de 0 até 1,1.0000000000000001e-09,1
+n_inscricoes_pgfn,de 1 até 2,1,2
+n_inscricoes_pgfn,de 2 até 4,2,4
+n_inscricoes_pgfn,de 4 até 9,4,9
+n_inscricoes_pgfn,de 9 até ∞,9,inf
+ln_valor_pgfn,de −∞ até 0 R$ de dívida ativa,-inf,0
+ln_valor_pgfn,= 0 R$ de dívida ativa,0,1.0000000000000001e-09
+ln_valor_pgfn,acima de 0 até 1.485 R$ de dívida ativa,1.0000000000000001e-09,7.3039227485656735
+ln_valor_pgfn,de 1.485 até 1.975 R$ de dívida ativa,7.3039227485656735,7.5886518478393556
+ln_valor_pgfn,de 1.975 até 2.691 R$ de dívida ativa,7.5886518478393556,7.8980426788330087
+ln_valor_pgfn,de 2.691 até 3.523 R$ de dívida ativa,7.8980426788330087,8.167388916015625
+ln_valor_pgfn,de 3.523 até 4.522 R$ de dívida ativa,8.167388916015625,8.4168338775634766
+ln_valor_pgfn,de 4.522 até 6.786 R$ de dívida ativa,8.4168338775634766,8.8227012634277333
+ln_valor_pgfn,de 6.786 até 18.083 R$ de dívida ativa,8.8227012634277333,9.8027734756469727
+ln_valor_pgfn,de 18.083 até 52.154 R$ de dívida ativa,9.8027734756469727,10.861972618103028
+ln_valor_pgfn,de 52.154 até 199.704 R$ de dívida ativa,10.861972618103028,12.204597473144531
+ln_valor_pgfn,de 199.704 até ∞ R$ de dívida ativa,12.204597473144531,inf
+pgfn_em_cobranca,de −∞ até 0,-inf,0
+pgfn_em_cobranca,= 0,0,1.0000000000000001e-09
+pgfn_em_cobranca,acima de 0 até 1,1.0000000000000001e-09,1
+pgfn_em_cobranca,de 1 até 2,1,2
+pgfn_em_cobranca,de 2 até 3,2,3
+pgfn_em_cobranca,de 3 até 7,3,7
+pgfn_em_cobranca,de 7 até ∞,7,inf
+pgfn_beneficio_fiscal,de −∞ até 0,-inf,0
+pgfn_beneficio_fiscal,= 0,0,1.0000000000000001e-09
+pgfn_beneficio_fiscal,acima de 0 até 1,1.0000000000000001e-09,1
+pgfn_beneficio_fiscal,de 1 até 2,1,2
+pgfn_beneficio_fiscal,de 2 até 3,2,3
+pgfn_beneficio_fiscal,de 3 até 5,3,5
+pgfn_beneficio_fiscal,de 5 até 10,5,10
+pgfn_beneficio_fiscal,de 10 até ∞,10,inf
+pgfn_ajuizado,de −∞ até 0,-inf,0
+pgfn_ajuizado,= 0,0,1.0000000000000001e-09
+pgfn_ajuizado,acima de 0 até 1,1.0000000000000001e-09,1
+pgfn_ajuizado,de 1 até ∞,1,inf
+pgfn_previdenciaria,de −∞ até 0,-inf,0
+pgfn_previdenciaria,= 0,0,1.0000000000000001e-09
+pgfn_previdenciaria,acima de 0 até 1,1.0000000000000001e-09,1
+pgfn_previdenciaria,de 1 até 2,1,2
+pgfn_previdenciaria,de 2 até 3,2,3
+pgfn_previdenciaria,de 3 até 4,3,4
+pgfn_previdenciaria,de 4 até 6,4,6
+pgfn_previdenciaria,de 6 até 11,6,11
+pgfn_previdenciaria,de 11 até ∞,11,inf
+pgfn_anos_desde_1a,"de −∞ até 0,268",-inf,0.26830938458442688
+pgfn_anos_desde_1a,"de 0,268 até 0,422",0.26830938458442688,0.42162901163101196
+pgfn_anos_desde_1a,"de 0,422 até 0,537",0.42162901163101196,0.53661876916885376
+pgfn_anos_desde_1a,"de 0,537 até 0,728",0.53661876916885376,0.7282683253288269
+pgfn_anos_desde_1a,"de 0,728 até 1,14",0.7282683253288269,1.1375769972801208
+pgfn_anos_desde_1a,"de 1,14 até 1,86",1.1375769972801208,1.8562628030776978
+pgfn_anos_desde_1a,"de 1,86 até 2,45",1.8562628030776978,2.4531142711639404
+pgfn_anos_desde_1a,"de 2,45 até 3,91",2.4531142711639404,3.9069130420684814
+pgfn_anos_desde_1a,"de 3,91 até 6,54",3.9069130420684814,6.5407257080078125
+pgfn_anos_desde_1a,"de 6,54 até ∞",6.5407257080078125,inf

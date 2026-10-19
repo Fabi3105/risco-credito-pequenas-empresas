@@ -1,0 +1,16 @@
+﻿variavel,faixa,coeficiente,pontos
+porte_natureza,MEI,0.050161,33.23
+setor,47,0.207135,28.7
+uf,RJ,-0.020943,35.28
+simples,nunca optou / optante,-0.403694,46.33
+idade,5 a 10 anos,-0.342113,44.55
+populacao_municipio,100 a 500 mil hab.,-0.016882,35.17
+pib_per_capita_municipio,R$ 20 a 30 mil,-0.015796,35.14
+capital_social,R$ 1 a 10 mil,-0.012024,35.03
+atividades_secundarias,nenhuma,0.092573,32.01
+filiais,nenhuma,0.370349,23.99
+socios_pf,nenhum,0.293917,26.2
+socio_pj,não,-0.053815,36.23
+historico_socios,sem sócio pessoa física,0.293917,26.2
+divida_ativa,sem dívida,-0.50466,49.24
+divida_previdenciaria,não / sim,-0.229539,41.3

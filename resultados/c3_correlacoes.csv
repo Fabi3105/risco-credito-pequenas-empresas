@@ -1,0 +1,9 @@
+﻿medida,juros,spearman,p_valor,semestres
+razao_1a,selic_abertura,0.235,0.463,12
+razao_1a,selic_12m_seguintes,0.573,0.051,12
+razao_3a,selic_abertura,-0.865,0.0,12
+razao_3a,selic_12m_seguintes,-0.469,0.124,12
+razao_vol_3a,selic_abertura,-0.081,0.803,12
+razao_vol_3a,selic_12m_seguintes,0.497,0.101,12
+razao_divida_3a,selic_abertura,-0.914,0.0,12
+razao_divida_3a,selic_12m_seguintes,-0.517,0.085,12

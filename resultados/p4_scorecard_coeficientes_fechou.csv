@@ -1,0 +1,175 @@
+﻿variavel,faixa,coeficiente
+porte_natureza,Demais · S.A. fechada,-0.3004045654
+porte_natureza,Demais · empresário individual,0.074328211
+porte_natureza,Demais · outra natureza,0.0229731508
+porte_natureza,Demais · sociedade limitada,0.0219711473
+porte_natureza,Demais · sociedade simples,0.2324043474
+porte_natureza,EPP · empresário individual,-0.6533877236
+porte_natureza,EPP · outra natureza,-0.0755641813
+porte_natureza,EPP · sociedade limitada,-0.0119971386
+porte_natureza,EPP · sociedade simples,-0.0738378686
+porte_natureza,ME · empresário individual,-0.2173558157
+porte_natureza,ME · outra natureza,0.0248111474
+porte_natureza,ME · sociedade limitada,0.2872341751
+porte_natureza,ME · sociedade simples,0.3886785839
+porte_natureza,MEI,0.0501614008
+porte_natureza,outras (raras),0.0004458994
+setor,01,0.1846541313
+setor,02,0.0081183797
+setor,03,0.1834973607
+setor,08,0.0405790143
+setor,10,0.1922062046
+setor,11,0.0354032277
+setor,13,-0.0559543272
+setor,14,0.086577448
+setor,15,0.1724771641
+setor,16,0.0890292643
+setor,17,0.0991304368
+setor,18,-0.0804381562
+setor,20,0.0185106003
+setor,22,-0.1195013403
+setor,23,-0.0149079511
+setor,24,-0.0654881632
+setor,25,-0.0489576396
+setor,26,-0.0574027106
+setor,27,-0.0506127147
+setor,28,-0.233265109
+setor,29,-0.1848934606
+setor,31,-0.0215492269
+setor,32,0.0597998811
+setor,33,-0.0654674835
+setor,35,0.0654913141
+setor,36,-0.024032259
+setor,37,-0.0059156368
+setor,38,0.2112875651
+setor,41,0.2702271337
+setor,42,0.1317044591
+setor,43,0.1033718482
+setor,45,-0.0914235488
+setor,46,0.1233717832
+setor,47,0.2071346999
+setor,49,0.1270287997
+setor,50,0.1474344938
+setor,52,0.2531125263
+setor,53,0.4799986628
+setor,55,-0.2267721819
+setor,56,0.3925057493
+setor,58,0.0705625005
+setor,59,-0.1681657716
+setor,60,-0.0539612893
+setor,61,0.177569953
+setor,62,-0.0725447149
+setor,63,0.054969384
+setor,64,-0.5573367549
+setor,66,-0.3346698052
+setor,68,-0.4705879726
+setor,69,-0.8533338522
+setor,70,-0.0493510534
+setor,71,-0.2074750909
+setor,72,0.0267969566
+setor,73,0.228403113
+setor,74,-0.0258449287
+setor,75,-0.3343397246
+setor,77,-0.0720597291
+setor,78,0.1091606799
+setor,79,-0.072175314
+setor,80,0.1430083418
+setor,81,0.0290499722
+setor,82,-0.0126935748
+setor,85,-0.0126070097
+setor,86,-0.6245380494
+setor,87,0.3586475998
+setor,88,0.3233549209
+setor,90,-0.2384664498
+setor,93,-0.0730993077
+setor,94,0.1056479605
+setor,95,0.0518021645
+setor,96,-0.149541769
+setor,97,0.0443308512
+setor,outras (raras),0.0938782951
+uf,AC,0.1157502646
+uf,AL,-0.0150170756
+uf,AM,0.1294096428
+uf,AP,0.3380248949
+uf,BA,-0.0241991459
+uf,CE,-0.0059451253
+uf,DF,0.1020521122
+uf,ES,-0.0771133626
+uf,GO,-0.0839604053
+uf,MA,0.0108838007
+uf,MG,-0.1122698475
+uf,MS,-0.0932805732
+uf,MT,-0.0183851683
+uf,PA,0.1399515451
+uf,PB,-0.015487342
+uf,PE,-0.0046411563
+uf,PI,-0.1175191593
+uf,PR,-0.128559692
+uf,RJ,-0.0209432152
+uf,RN,-0.0715238586
+uf,RO,0.11685231
+uf,RR,0.0195347668
+uf,RS,-0.0598673568
+uf,SC,-0.1557010352
+uf,SE,-0.0363846864
+uf,SP,-0.1660724704
+uf,TO,0.0048721087
+uf,outras (raras),0.0
+simples,excluída do Simples,0.1741545172
+simples,nunca optou / optante,-0.4036937474
+simples,outras (raras),0.0
+idade,1 a 2 anos,0.5128083631
+idade,10 a 20 anos,-0.5387094635
+idade,2 a 3 anos,0.4489243717
+idade,20 anos ou mais,-0.512730286
+idade,3 a 5 anos,-0.1006271624
+idade,5 a 10 anos,-0.3421125639
+idade,menos de 1 ano,0.3029075109
+idade,outras (raras),0.0
+populacao_municipio,100 a 500 mil hab.,-0.0168818954
+populacao_municipio,20 a 100 mil hab.,-0.1124380872
+populacao_municipio,500 mil a 1 milhão hab.,0.0334803563
+populacao_municipio,até 20 mil hab.,-0.150715873
+populacao_municipio,mais de 1 milhão hab.,0.0152508392
+populacao_municipio,outras (raras),0.00176543
+pib_per_capita_municipio,R$ 20 a 30 mil,-0.0157957482
+pib_per_capita_municipio,R$ 30 a 45 mil,-0.037698616
+pib_per_capita_municipio,R$ 45 a 65 mil,-0.079022824
+pib_per_capita_municipio,até R$ 20 mil,-0.020010678
+pib_per_capita_municipio,mais de R$ 65 mil,-0.0787767941
+pib_per_capita_municipio,outras (raras),0.00176543
+capital_social,R$ 1 a 10 mil,-0.0120238515
+capital_social,R$ 10 a 50 mil,-0.0818530479
+capital_social,R$ 50 a 200 mil,-0.0425914625
+capital_social,até R$ 1 mil (inclui zero),0.102796677
+capital_social,mais de R$ 200 mil,-0.1958675453
+capital_social,outras (raras),0.0
+atividades_secundarias,1 a 2,-0.0481670855
+atividades_secundarias,3 a 5,-0.1064488537
+atividades_secundarias,6 ou mais,-0.1674966332
+atividades_secundarias,nenhuma,0.0925733422
+atividades_secundarias,outras (raras),0.0
+filiais,1 a 2,-0.0385128707
+filiais,3 ou mais,-0.5613750297
+filiais,nenhuma,0.3703486702
+filiais,outras (raras),0.0
+socios_pf,1,-0.0564207476
+socios_pf,2,-0.1126417561
+socios_pf,3 ou mais,-0.3543934507
+socios_pf,nenhum,0.2939167242
+socios_pf,outras (raras),0.0
+socio_pj,não,-0.0538149382
+socio_pj,sim,-0.175724292
+socio_pj,outras (raras),0.0
+historico_socios,sem sócio pessoa física,0.2939167242
+historico_socios,sócio já fechou empresa deixando dívida,0.0716420966
+historico_socios,sócio já fechou empresa sem dívida,-0.2066344502
+historico_socios,sócio tem outra empresa ativa sem dívida,-0.2707324714
+historico_socios,única empresa dos sócios / sócio tem outra empresa ativa com dívida,-0.1177311293
+historico_socios,outras (raras),0.0
+divida_ativa,em cobrança até R$ 10 mil / em cobrança de R$ 10 a 100 mil / em cobrança acima de R$ 100 mil,0.7613011525
+divida_ativa,sem dívida,-0.5046601849
+divida_ativa,só parcelada ou garantida,-0.4861801978
+divida_ativa,outras (raras),0.0
+divida_previdenciaria,não / sim,-0.2295392302
+divida_previdenciaria,outras (raras),0.0

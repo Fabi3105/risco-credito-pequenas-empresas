@@ -1,0 +1,16 @@
+dados/brutos/
+dados/processados/
+dados/processados_2023-05/
+dados/_lixo/
+dados/externos/*.json
+dados/externos/ibge_*.csv
+_lixo/
+CONCLUSOES.md
+relatorio_impressao.html
+resultados/painel_dados.json
+scripts/__pycache__/
+_publicar_github.bat
+_atualizar_github.bat
+*.pyc
+scripts/.tmp/
+*.tmp

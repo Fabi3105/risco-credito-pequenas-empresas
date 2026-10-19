@@ -1,0 +1,3 @@
+﻿divisao,ano,populacao,pib_per_capita,ativas_inicio,constante,coef_log_populacao,coef_log_pib_per_capita,efeito_ano_2020,conta_esperadas,esperadas,saturacao,faixa_pop,quintil_pibpc,taxa_celula,esperadas_tabela,saturacao_tabela
+471,2020,35440.0,64890.32,71,-3.809971,0.920754,-0.086736,-0.160487,111.487638,111.48764,0.638463,20 a 50 mil,5,0.0035,124.04466,0.574091
+561,2020,35440.0,64890.32,166,-10.127856,0.991993,0.489707,-0.02534,288.501073,288.50104,0.576122,20 a 50 mil,5,0.007588,268.91592,0.618004

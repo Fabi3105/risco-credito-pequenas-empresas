@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesa de Crédito PJ — sobrevivência e risco de pequenas empresas</title>
+<meta name="description" content="Painel do estudo de sobrevivência de pequenas empresas e risco de crédito PJ com dados abertos do CNPJ, PGFN e SCR.data.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--fundo:#F3F6F5;--sup:#FFFFFF;--tinta:#0E3B43;--tinta2:#3E5A60;--muda:#6B7B80;--borda:#D5DFE0;--verde:#1F7A4D;--ambar:#B07A12;--risco:#B03A2E;--claro:#E8EEEE;
+--fA:#1F6B45;--fB:#78B088;--fC:#A9AAA2;--fD:#E0956A;--fE:#B03A2E;--mei:#B07A12;--me:#2F6FA0;--epp:#2E8B57;--mono:'IBM Plex Mono',ui-monospace,monospace;--sans:'IBM Plex Sans',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--fundo);color:var(--tinta);font:15px/1.5 var(--sans)}
+a{color:var(--verde)}
+.topo{background:var(--tinta);color:#fff;padding:18px 16px 14px;border-bottom:4px solid var(--verde)}
+.topo .lin{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;justify-content:space-between}
+.topo h1{margin:0;font-size:20px;letter-spacing:.5px}.topo h1 small{display:block;font-weight:400;font-size:13px;opacity:.85;letter-spacing:0}
+.topo .carimbo{font:600 12px var(--mono);border:1px solid rgba(255,255,255,.5);padding:3px 8px;border-radius:3px}
+nav{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--borda)}
+nav .lin{max-width:1180px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;padding:0 12px}
+nav a{white-space:nowrap;padding:10px 10px;color:var(--tinta2);text-decoration:none;font-size:13px;font-weight:500;border-bottom:3px solid transparent}
+nav a:hover{border-bottom-color:var(--verde);color:var(--tinta)}
+main{max-width:1180px;margin:0 auto;padding:16px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:4px 0 14px}
+.kpi{background:var(--sup);border:1px solid var(--borda);border-left:4px solid var(--tinta);border-radius:4px;padding:10px 12px}
+.kpi b{display:block;font:600 24px var(--mono);color:var(--tinta)}.kpi span{font-size:12.5px;color:var(--tinta2)}
+.decisao{background:#FFF8EA;border:1px solid #E8D3A6;border-left:4px solid var(--ambar);border-radius:4px;padding:12px 14px;margin-bottom:18px}
+.decisao h2{margin:0 0 6px;font-size:15px}.decisao ol{margin:4px 0 0 18px;padding:0}
+section.bloco{background:var(--sup);border:1px solid var(--borda);border-radius:6px;padding:16px;margin:0 0 18px}
+.etq{font:600 11px var(--mono);color:var(--verde);letter-spacing:.8px;text-transform:uppercase}
+h2.tit{margin:2px 0 10px;font-size:19px}
+h3{font-size:15px;margin:14px 0 6px}
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 12px}
+.tres div{background:var(--claro);border-radius:4px;padding:10px 12px;font-size:13.5px}.tres h4{margin:0 0 4px;font-size:12px;font-family:var(--mono);text-transform:uppercase;color:var(--tinta2)}
+.grade{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cartao{border:1px solid var(--borda);border-radius:5px;padding:12px;background:#fff;min-width:0}
+.cartao .cab{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap}
+.cartao h4{margin:0;font-size:14px}
+.selo{font:600 10.5px var(--mono);padding:2px 6px;border-radius:3px;white-space:nowrap}
+.selo.f{background:var(--claro);color:var(--tinta2)}.selo.r{background:#E3F1E9;color:var(--verde)}
+.filtros{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:end;margin:8px 0 10px;padding:10px;background:var(--claro);border-radius:4px}
+.filtros label{font-size:12px;color:var(--tinta2);display:flex;flex-direction:column;gap:3px;max-width:100%;min-width:0}
+select,input{font:14px var(--sans);padding:6px 8px;min-width:0;border:1px solid var(--borda);border-radius:4px;background:#fff;color:var(--tinta);max-width:100%}
+input[type=checkbox]{width:auto}
+.chk{flex-direction:row!important;align-items:center;gap:6px!important}
+button{font:600 13px var(--sans);border:1px solid var(--tinta);background:#fff;color:var(--tinta);border-radius:4px;padding:6px 10px;cursor:pointer}
+button.pri{background:var(--tinta);color:#fff}
+.verdados{margin-top:6px;font-size:12px}
+.verdados summary{cursor:pointer;color:var(--verde);font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:6px 9px;border-bottom:1px solid var(--borda);text-align:left;vertical-align:middle}
+th{background:var(--tinta);color:#fff;font-weight:600;font-size:12px;line-height:1.3;position:sticky;top:0;z-index:1;border-bottom:2px solid var(--verde);border-right:1px solid rgba(255,255,255,.18);vertical-align:bottom}
+th:last-child{border-right:none}
+tbody tr:nth-child(even) td,table tr:nth-child(even) td{background:#F5F8F8}
+tr:hover td{background:#E8F0EF}
+td.n,th.n{text-align:center;font-variant-numeric:tabular-nums}
+td.n{font-family:var(--mono);white-space:nowrap}
+.tabwrap{overflow-x:auto;max-width:100%}
+.rolagem{max-height:420px;overflow:auto;border:1px solid var(--borda);border-radius:4px}
+.legenda{font-size:12px;color:var(--muda);margin-top:4px}
+.aviso{font-size:12px;color:var(--ambar)}
+.faixa{display:inline-block;min-width:26px;text-align:center;font:600 13px var(--mono);color:#fff;border-radius:3px;padding:1px 6px}
+.fA{background:var(--fA)}.fB{background:var(--fB);color:#10331f}.fC{background:var(--fC);color:#222}.fD{background:var(--fD);color:#3a1a08}.fE{background:var(--fE)}
+svg text{font-family:var(--sans)}
+.tt{position:fixed;pointer-events:none;background:var(--tinta);color:#fff;font-size:12px;padding:6px 8px;border-radius:4px;z-index:20;display:none;max-width:260px}
+.ficha{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}
+.ficha>*{min-width:0}.ficha fieldset{min-width:0;border:1px solid var(--borda);border-radius:5px;margin:0 0 10px;padding:8px 10px}
+.ficha legend{font:600 12px var(--mono);color:var(--tinta2);padding:0 4px;text-transform:uppercase}
+.campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 10px}
+.campos label{font-size:12px;color:var(--tinta2);display:flex;flex-direction:column;gap:3px;min-width:0}.campos select,.campos input:not([type=checkbox]){width:100%}
+.mini{display:none}
+@media (max-width:860px){.mini{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:15;background:var(--tinta);color:#fff;padding:8px 16px;justify-content:space-between;align-items:center;font:600 14px var(--mono)}.mini a{color:#fff}body{padding-bottom:44px}}
+.resultado{position:sticky;top:52px;align-self:start;border:2px solid var(--tinta);border-radius:6px;padding:14px;background:#FBFDFC}
+.resultado .nota{font:600 34px var(--mono)}
+.medidor{height:12px;border-radius:6px;background:linear-gradient(90deg,var(--fE),var(--fD),var(--fC),var(--fB),var(--fA));position:relative;margin:8px 0 18px}
+.medidor i{position:absolute;top:-5px;width:4px;height:22px;background:var(--tinta);border-radius:2px}
+.linha-res{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--borda);padding:5px 0;font-size:13.5px}
+.linha-res b{font-family:var(--mono)}
+footer{max-width:1180px;margin:0 auto;padding:10px 16px 30px;font-size:12px;color:var(--muda)}
+@media (max-width:860px){.grade,.ficha,.tres{grid-template-columns:1fr}.resultado{position:static}.campos{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){main{padding:10px}.campos{grid-template-columns:1fr}section.bloco{padding:12px}.kpi b{font-size:20px}th,td{padding:4px 5px;font-size:12px}}
+</style>
+</head>
+<body>
+<div class="topo"><div class="lin"><h1>MESA DE CRÉDITO PJ<small>Sobrevivência de pequenas empresas e risco de crédito · dados abertos do CNPJ, PGFN e SCR</small></h1><span class="carimbo">BASE OUT/2026</span></div></div>
+<nav><div class="lin"><a href="#resumo">Resumo</a><a href="#s11">1.1 Sobrevivência</a><a href="#s12">1.2 Sinais de risco</a><a href="#s13">1.3 Nota de risco</a><a href="#s14">1.4 Bons clientes</a><a href="#calc">Calculadora</a><a href="#s2">2–4 Soluções e pilotos</a><a href="#s5">5 Limites e método</a></div></nav>
+<main>
+<div id="resumo">
+<div class="kpis" id="kpis"></div>
+<div class="legenda" style="margin:6px 0 10px">Termos: MEI = microempreendedor individual; ME = microempresa; EPP = empresa de pequeno porte (o Banco Central chama MEI e ME de "Micro" e a EPP de "Pequena"). Simples Nacional = regime simplificado de impostos das micro e pequenas empresas. Nova dívida ativa = imposto federal não pago e inscrito em cobrança pela PGFN, usado como sinal de mau pagador.</div>
+<div class="decisao"><h2>Decisão pedida (relatório, sumário executivo)</h2>
+Aprovar dois pilotos com sorteio antes de levar a nota a toda a carteira (piloto 1: seis meses de concessões, se o volume permitir, e leitura 12 meses depois; piloto 2: leitura de conversão em 3 meses). No fluxo proposto, cerca de 1 em 4 propostas não recusadas vai para análise manual, três quartos delas de empresas com menos de 1 ano:
+<ol><li><b>Nota no fluxo de concessão</b>: recusa abaixo do corte dos 80% (salvo divergência forte), análise manual nas três regras e nas divergências fortes; mínimo de <span id="d_p1"></span> concessões por grupo.</li>
+<li><b>Oferta ativa a bons clientes</b> pouco atendidos e a MEIs que cresceram; mínimo de <span id="d_p2"></span> empresas por grupo para medir conversão.</li></ol>
+<details class="verdados" style="margin-top:8px" open><summary>Fluxograma da decisão de crédito</summary><img src="__FLUXO__" alt="Fluxograma: 1) nota e modelo de referência discordam muito? sim, análise manual; 2) nota de dívida na faixa E? sim, recusa; 3) cai em regra de cautela (menos de 1 ano, saiu do Simples, dívida em cobrança)? sim, análise manual; senão aprovação pela nota; 4) nota de fechamento na faixa E: prazo curto." style="width:100%;max-width:720px;height:auto;display:block;margin:6px 0"></details>
+<div id="g_fluxo" style="margin:10px 0 4px"></div><div id="g_fluxo_mil" class="legenda" style="margin-bottom:6px"></div>
+<div class="legenda">Ordem: aprovação e parecer do jurídico em nov/2026 · integração dez/2026–jan/2027 · concessões do piloto de fev a jul/2027 · leitura de conversão em mai/2027 · leitura de inadimplência em ago/2028, se o volume permitir (12 meses após a última concessão).</div></div>
+</div>
+
+<section class="bloco" id="s11"><div class="etq">Relatório 1.1</div><h2 class="tit">Quanto tempo as empresas sobrevivem</h2>
+<div class="tres"><div><h4>O que os dados mostram</h4>Metade dos MEIs fecha em cinco anos. O encerramento voluntário é maior no 1º ano e depois fica estável, sem chegar perto de zero.</div>
+<div><h4>Por que importa</h4>O prazo do crédito disputa com a vida da empresa: um empréstimo de 36 meses a um MEI novo atravessa o período em que um terço deles fecha.</div>
+<div><h4>O que fazer</h4>Prazo e limite crescentes com a idade; cautela em restaurantes, lanchonetes, comida para entrega e comércio; hotéis e pousadas não estão entre os mais frágeis (solução 2).</div></div>
+<div class="grade">
+<div class="cartao"><div class="cab"><h4>Seguem abertas após 1, 3, 5 e 10 anos</h4><span class="selo f">FIXO</span></div><div id="g_sobrev"></div>
+<details class="verdados"><summary>Ver dados</summary><div id="t_sobrev"></div><div class="legenda">Turmas 2016–2020 (1 a 5 anos) e 2012–2015 (10 anos, com aviso: baixas de ofício em massa em 2015 e 2018). Fora incorporação imobiliária.</div></details></div>
+<div class="cartao"><div class="cab"><h4>Encerramento voluntário em cada ano de vida</h4><span class="selo f">FIXO</span></div><div id="g_risco"></div>
+<details class="verdados"><summary>Ver dados</summary><div id="t_risco"></div><div class="legenda">Baixas voluntárias no ano ÷ empresas que chegaram ao ano. Turmas 2016–2020.</div></details></div>
+</div>
+<h3>Por setor</h3>
+<div class="filtros"><label>Porte na abertura<select id="f_porte_setor"><option>ME</option><option>MEI</option><option>EPP</option></select></label></div>
+<div class="cartao"><div class="cab"><h4>Seguem abertas após 5 anos, por setor</h4><span class="selo r">RESPONDE AO FILTRO</span></div><div id="g_setor"></div>
+<details class="verdados"><summary>Ver dados</summary><div id="t_setor"></div><div class="legenda">Setores com 1.000 ou mais empresas no porte. "Com dívida": fechou deixando dívida ativa da União.</div></details></div>
+<div class="cartao" style="margin-top:12px"><div class="cab"><h4>Hotéis e pousadas × alimentação, por atividade</h4><span class="selo f">FIXO</span></div><div id="t_q1e"></div>
+<div class="legenda">A Receita põe no mesmo grupo ("alojamento e alimentação") negócios muito diferentes. Hotéis e pousadas fecham menos que as outras atividades do mesmo porte e só em 2020 chegaram à média; o risco está na alimentação. Na pandemia, as aberturas de restaurantes e de comida para entrega (marmitas, cozinhas que vendem por aplicativo) cresceram cerca de 50%, e essas turmas encerraram 25% a 31% mais em 3 anos que as de 2016–2019. Fechamento × outras atividades: 1 = igual às outras atividades do mesmo porte (MEI, ME, EPP). Turmas 2016–2020.</div></div>
+<h3>Por estado e município</h3>
+<div class="filtros"><label>UF<select id="f_uf_mun"></select></label><label>Buscar município<input id="f_busca_mun" placeholder="ex.: Garibaldi"></label>
+<label>Mínimo de empresas ativas<select id="f_min_mun"><option value="0">qualquer</option><option value="1000">1.000</option><option value="3000" selected>3.000</option><option value="10000">10.000</option></select></label><label>Ordenar por<select id="f_ord_mun"><option value="bons_por_mil_hab">bons clientes por mil hab.</option><option value="empresas_ativas">empresas ativas</option><option value="sobrevive_5a_pct">sobrevivência em 5 anos</option><option value="razao_fechamento">fechamento × esperado</option><option value="bons_pct">% de bons clientes</option></select></label></div>
+<div class="cartao"><div class="cab"><h4 id="tit_mun">Municípios</h4><span class="selo r">RESPONDE AOS FILTROS</span></div>
+<div class="rolagem"><table id="t_mun"></table></div>
+<div class="legenda">Fechamento × esperado: 1 = igual ao Brasil para a mesma mistura de porte e setor; 0,90 = fecha 10% menos (turmas 2016–2020, municípios com 500+ empresas); ± = margem de 95%: diferença menor que a margem não é sinal claro; com milhares de municípios, cerca de 1 em 20 passa da margem por acaso, então um município isolado é indício, não prova. Bons clientes: faixa A ou B nas duas notas e nenhuma regra de política, empresas ativas em out/2026 (amostra de 10% × 10). "—": base pequena (menos de 300 empresas ativas) ou sem turma suficiente. Risco médio: chance média de nova dívida ativa prevista pela nota para as empresas ativas do município. O crédito bancário não é público por município.</div></div>
+<div class="cartao" style="margin-top:12px"><div class="cab"><h4>Estados: fechamento em 5 anos contra o esperado</h4><span class="selo f">FIXO</span></div><div id="g_uf"></div>
+<details class="verdados"><summary>Ver dados</summary><div id="t_uf"></div></details></div>
+</section>
+
+<section class="bloco" id="s12"><div class="etq">Relatório 1.2</div><h2 class="tit">Que características indicam mais ou menos risco</h2>
+<div class="tres"><div><h4>O que os dados mostram</h4>Dívida ativa da União, saída do Simples Nacional (regime simplificado de impostos) e histórico dos sócios são os sinais mais fortes entre os dados públicos analisados. Concorrência local, ajustada por população e renda, não acompanha diferença no fechamento.</div>
+<div><h4>Por que importa</h4>São dados públicos e gratuitos (cadastro da Receita publicado todo mês; dívida ativa da PGFN, a cada trimestre) que podem ser consultados no momento da proposta.</div>
+<div><h4>O que fazer</h4>Incluir esses sinais na concessão e no acompanhamento da carteira (soluções 1 e 4). A exclusão do Simples e a dívida em cobrança também são regras de análise manual, fora da nota.</div></div>
+<div class="filtros"><label>Característica<select id="f_carac"></select></label></div>
+<div class="cartao"><div class="cab"><h4>Quantas fecham (ou ficam com nova dívida) com a característica, para cada 100 parecidas sem ela que fecham</h4><span class="selo r">RESPONDE AO FILTRO</span></div><div id="g_fatores"></div><div class="legenda">Como ler: imagine dois grupos do mesmo tamanho, com empresas do mesmo porte e idade; num, todas têm a característica, no outro, nenhuma. Se 100 do segundo grupo fecharam, a barra mostra quantas do primeiro fecharam: 167 = 67% a mais; 60 = 40% a menos. A linha tracejada em 100 marca "igual".</div>
+<details class="verdados"><summary>Ver dados</summary><div id="t_fatores"></div><div class="legenda">Características como estavam em mai/2023 (dívida em mar/2023); resultado até out/2026. Categorias com 1.000 ou mais empresas.</div></details></div>
+<div class="cartao" style="margin-top:12px"><div class="cab"><h4>Época da abertura: encerramento voluntário em 3 anos contra o esperado</h4><span class="selo f">FIXO</span></div><div id="g_c3"></div>
+<div class="legenda">Âmbar: abertas durante a pandemia. Linha tracejada: esperado (1,00). Abaixo de cada barra, a Selic média dos 12 meses seguintes (% a.a.). Os juros, sozinhos, não acompanham o padrão: as turmas de 2016 abriram com Selic de 14% e fecharam no esperado.</div></div>
+</section>
+
+<section class="bloco" id="s13"><div class="etq">Relatório 1.3</div><h2 class="tit">A nota de risco</h2>
+<div class="tres"><div><h4>O que os dados mostram</h4>Uma nota única, com o setor dentro, separa bem: a nova dívida ativa vai de <span class="dyn" data-k="fA"></span> na faixa A a <span class="dyn" data-k="fE"></span> na E. Fechar e dever são riscos diferentes; há uma nota para cada.</div>
+<div><h4>Por que importa</h4>Usa só dados públicos e dá uma triagem para clientes sem histórico; a tabela de pontos pode ser auditada pelo comitê.</div>
+<div><h4>O que fazer</h4>Filtro inicial com a nota e análise manual quando nota e modelo de referência divergem em 2 faixas ou mais (solução 1, piloto 1).</div></div>
+<div class="grade">
+<div class="cartao"><div class="cab"><h4>O que aconteceu com cada faixa depois de mai/2023</h4><span class="selo r">RESPONDE AO FILTRO</span></div>
+<div class="filtros" style="margin:6px 0"><label>Nota<select id="f_nota"><option value="divida">Dívida (oficial)</option><option value="fechamento">Fechamento</option></select></label></div>
+<div id="g_faixas"></div><div class="legenda">Traço escuro sobre a barra colorida: valor previsto pela nota.</div><details class="verdados"><summary>Ver dados</summary><div id="t_faixas"></div><div class="legenda">Teste com 616.603 empresas que o modelo não viu (ativas em mai/2023, resultado até out/2026).</div></details></div>
+<div class="cartao"><div class="cab"><h4>Nova dívida entre aprovados, por nível de aprovação</h4><span class="selo f">FIXO</span></div><div id="g_curva"></div>
+<details class="verdados"><summary>Ver dados</summary><div id="t_curva"></div></details></div>
+</div>
+<div class="grade" style="margin-top:12px">
+<div class="cartao"><div class="cab"><h4>As duas notas juntas</h4><span class="selo r">RESPONDE AO FILTRO</span></div>
+<div class="filtros" style="margin:6px 0"><label>Mostrar<select id="f_matriz"><option value="nova_divida_pct">% com nova dívida</option><option value="fechou_pct">% que fechou</option><option value="participacao_pct">% das empresas</option></select></label></div>
+<div id="t_matriz"></div><div class="legenda">Linhas: faixa da nota de dívida; colunas: faixa da nota de fechamento. Bom cliente = A ou B nas duas notas e nenhuma regra de política (menos de 1 ano, excluída do Simples, dívida em cobrança). Células em verde: A/B nas duas, antes das regras.</div></div>
+<div class="cartao"><div class="cab"><h4>Modelo de referência: geral × próprio de cada setor (AUC)</h4><span class="selo f">FIXO</span></div><div id="t_setor_modelo"></div>
+<div class="legenda">AUC: poder de separação (0,5 = sorteio; 1 = perfeito). Teste feito com o modelo de referência (LightGBM), não com a tabela de pontos: o modelo geral empatou ou ganhou em todos os setores.</div></div>
+</div>
+</section>
+
+<section class="bloco" id="s14"><div class="etq">Relatório 1.4</div><h2 class="tit">Onde estão os bons clientes pouco atendidos</h2>
+<div class="tres"><div><h4>O que os dados mostram</h4><span class="dyn" data-k="npa"></span> segmentos (UF × setor × porte) têm bons clientes e pouco crédito; em <span class="dyn" data-k="npri"></span> a inadimplência também é igual ou menor que a nacional (<span class="dyn" data-k="bpri"></span> bons clientes). Em número de segmentos, a maioria são EPPs de São Paulo; em número de bons clientes, pesam mais os MEIs e as MEs de transporte em SP e da construção em MG (<span class="dyn" data-k="peso"></span> dos bons prioritários). O transporte em SP passa o critério por pouco: a vantagem em bons clientes pode estar dentro do erro da amostra.</div>
+<div><h4>Por que importa</h4>Combinam demanda, bom pagamento e pouca oferta; crescer em segmentos disputados custa mais caro.</div>
+<div><h4>O que fazer</h4>Oferta ativa a bons clientes dos segmentos prioritários e a MEIs que cresceram, medida em piloto (solução 3, piloto 2).</div></div>
+<div class="filtros"><label>UF<select id="f_uf_seg"></select></label><label>Setor<select id="f_sec_seg"></select></label><label>Porte<select id="f_porte_seg"><option value="">Todos</option><option value="Micro">MEI e ME</option><option value="Pequeno">EPP</option></select></label>
+<label>Mostrar<select id="f_tipo_seg"><option value="pri">Só prioritários</option><option value="pa">Pouco atendidos</option><option value="todos">Todos os segmentos</option></select></label></div>
+<div class="cartao"><div class="cab"><h4 id="tit_seg">Segmentos</h4><span class="selo r">RESPONDE AOS FILTROS</span></div>
+<div class="rolagem"><table id="t_seg"></table></div>
+<div class="legenda">Atendimento = crédito do segmento ÷ crédito esperado para o seu número de empresas no padrão nacional do mesmo setor e porte (SCR, 12 meses até ago/2026). Pouco atendido: atendimento abaixo de 0,8, bons clientes iguais ou acima do esperado para a mistura de MEIs e MEs, e 2 mil empresas ou mais. Prioritário: também com inadimplência igual ou menor que a nacional do setor e porte. Um segmento de MEIs e MEs só entra no ranking se a proporção de MEIs estiver a até 10 pontos da nacional do setor; com 5 pontos, ficam <span class="dyn" data-k="sens5"></span> prioritários. Pequeno = EPP. Atividades financeiras fora. O SCR não separa alojamento de alimentação. Bons clientes: A ou B nas duas notas e nenhuma regra de política.</div></div>
+<div class="grade" style="margin-top:12px">
+<div class="cartao"><div class="cab"><h4>O que aconteceu com os MEIs de mai/2023</h4><span class="selo f">FIXO</span></div><div id="g_mei"></div><div class="legenda">12,2 milhões de MEIs ativos em mai/2023, acompanhados até out/2026.</div></div>
+<div class="cartao"><div class="cab"><h4>Onde mais MEIs crescem</h4><span class="selo r">RESPONDE AO FILTRO</span></div>
+<div class="filtros" style="margin:6px 0"><label>Ver por<select id="f_c4"><option value="setor">Setor</option><option value="uf">UF</option></select></label></div>
+<div class="rolagem" style="max-height:300px"><table id="t_c4"></table></div><div class="legenda">Cresceu: saiu do MEI e segue no Simples. % dos ativos: entre os que seguem abertos.</div></div>
+</div>
+</section>
+
+<section class="bloco" id="calc"><div class="etq">Relatório 1.3 · anexo da nota</div><h2 class="tit">Calculadora — ficha de proposta</h2>
+<p style="margin:0 0 10px;font-size:13.5px">Preencha com os dados da empresa (Cartão CNPJ, consulta do Simples e certidão da PGFN). A conta é a mesma tabela de pontos do relatório (<code>metodo/P4_nota_de_risco.md</code>), com 15 variáveis em faixas fixas. Nada é enviado: o cálculo roda no seu navegador.</p>
+<div class="ficha">
+<form id="form" onsubmit="return false">
+<fieldset><legend>Empresa</legend><div class="campos">
+<label>UF<select id="c_uf"></select></label><label>Município<select id="c_mun"></select></label>
+<label style="grid-column:1/-1">Setor (divisão CNAE, 2 primeiros dígitos)<select id="c_div"></select></label>
+<label>Porte<select id="c_porte"><option value="MEI">MEI</option><option value="ME" selected>ME</option><option value="EPP">EPP</option><option value="Demais">Demais</option></select></label>
+<label>Natureza jurídica<select id="c_nat"><option value="empresário individual">Empresário individual</option><option value="sociedade limitada" selected>Sociedade limitada</option><option value="sociedade simples">Sociedade simples limitada</option><option value="S.A. fechada">S.A. fechada</option><option value="EIRELI">EIRELI</option><option value="outra natureza">Outra</option></select></label>
+<label>Simples Nacional<select id="c_simples"><option value="optante">Optante</option><option value="excluída do Simples">Já optou e foi excluída</option><option value="nunca optou">Nunca optou</option></select></label>
+<label>Data de abertura<input type="date" id="c_abertura" value="2021-03-15"></label>
+<label>Capital social (R$)<input type="number" id="c_capital" min="0" step="100" value="20000"></label>
+<label>Atividades secundárias (nº)<input type="number" id="c_cnae" min="0" value="2"></label>
+<label>Filiais (nº)<input type="number" id="c_filiais" min="0" value="0"></label>
+</div></fieldset>
+<fieldset><legend>Sócios</legend><div class="campos">
+<label>Sócios pessoa física (nº)<input type="number" id="c_spf" min="0" value="2"></label><label>Sócios pessoa jurídica (nº)<input type="number" id="c_spj" min="0" value="0"></label>
+<label>Outras empresas ativas dos sócios<input type="number" id="c_oat" min="0" value="0"></label><label>…dessas, com dívida ativa<input type="number" id="c_oatd" min="0" value="0"></label>
+<label>Outras empresas dos sócios já fechadas<input type="number" id="c_ofe" min="0" value="0"></label><label>…dessas, fechadas com dívida ativa<input type="number" id="c_ofed" min="0" value="0"></label>
+</div><div class="legenda">Some as empresas de todos os sócios pessoa física. Sem sócio pessoa física (ex.: MEI), deixe 0. A idade dos sócios não entra na nota.</div></fieldset>
+<fieldset><legend>Dívida ativa da União (PGFN)</legend><div class="campos">
+<label>Inscrições (nº)<input type="number" id="c_dn" min="0" value="0"></label><label>Valor total (R$)<input type="number" id="c_dv" min="0" step="100" value="0"></label>
+<label>Em cobrança (nº)<input type="number" id="c_dc" min="0" value="0"></label><label>Previdenciárias (nº)<input type="number" id="c_dprev" min="0" value="0"></label>
+</div><div class="legenda">Inscrições que não estão "em cobrança" são as parceladas, garantidas ou suspensas.</div></fieldset>
+<button type="button" id="b_exemplo">Preencher com um exemplo (MEI novo)</button> <button type="button" id="b_limpar">Voltar ao exemplo inicial</button>
+</form>
+<div class="resultado" id="res"></div>
+</div>
+</section>
+
+<section class="bloco" id="s2"><div class="etq">Relatório 2 a 4</div><h2 class="tit">Soluções, pilotos e metas</h2>
+<div class="rolagem" style="max-height:none"><table>
+<tr><th>Nº</th><th>O que fazer</th><th>Quem faz</th><th>Custo financeiro / humano</th></tr>
+<tr><td>1</td><td>Nota de dívida como filtro inicial (faixa E abaixo do corte: recusa, salvo divergência forte) e nota de fechamento para prazo (faixa E de fechamento: prazo curto); análise manual quando nota e modelo de referência divergem em 2 faixas ou mais e para empresa com menos de 1 ano, excluída do Simples ou com dívida em cobrança; parecer do jurídico antes</td><td>Crédito, modelagem e jurídico</td><td>Baixo / médio a alto (fila de análise manual)</td></tr>
+<tr><td>2</td><td>Prazo e limite crescentes com a idade; cautela em setores frágeis</td><td>Política de crédito</td><td>Baixo / baixo</td></tr>
+<tr><td>3</td><td>Oferta ativa a bons clientes dos segmentos prioritários e a MEIs que cresceram</td><td>Comercial e crédito</td><td>Médio / médio</td></tr>
+<tr><td>4</td><td>Monitoramento da carteira: dívida ativa (dados abertos trimestrais ou consulta por CNPJ), exclusão do Simples, sócio com dívida</td><td>Risco e TI</td><td>Médio (automação ou bureau) / médio</td></tr>
+<tr><td>5</td><td>Acompanhar a carteira por turma de abertura e setor</td><td>Risco</td><td>Baixo / baixo</td></tr>
+<tr><td>6</td><td>Recalibrar as notas todo ano e calibrar com a inadimplência interna</td><td>Modelagem</td><td>Baixo / médio</td></tr></table></div>
+<h3>Fluxo de decisão proposto (teste, empresas de mai/2023)</h3><div id="t_fluxo"></div>
+<div class="legenda">Recusa: faixa E da nota de dívida (abaixo do corte dos 80%), salvo divergência forte. Análise manual: regra de política (menos de 1 ano, excluída do Simples, dívida em cobrança) ou divergência de 2+ faixas com o modelo de referência. Cerca de 1 em 4 propostas não recusadas vai para um analista; cerca de três quartos da fila são empresas com menos de 1 ano, que recebem menos nova dívida mas fecham mais. Alternativa a decidir pela diretoria de crédito: regra automática para empresas novas (limite baixo e prazo curto), que deixa na fila só a linha "fila sem as empresas novas", ao custo de aprovar sem analista um grupo que fecha 41,9%. Ordem do fluxo: divergência forte → análise manual; senão faixa E de dívida → recusa; senão regra de política → análise manual; senão aprovação (prazo curto se a faixa de fechamento for E).</div>
+<h3>Pilotos (dimensionamento)</h3><div id="t_pilotos"></div>
+<h3>Quanto tempo o piloto 1 leva para atingir o tamanho</h3><div id="t_viab"></div>
+<div class="legenda">Meses até o grupo com nota atingir o tamanho, conforme as propostas por mês que a política atual aprovaria no porte. O sorteio divide as propostas ao meio, e o grupo com nota concede só às que passam no corte (80%): meses = tamanho ÷ (0,5 × 0,8 × propostas). Com menos de cerca de 4.200 propostas aprováveis por mês de MEIs e MEs, o cenário conservador não cabe em seis meses: a concessão do piloto deve durar mais e a leitura muda de data. Os meses são um piso: supõem que a análise manual aprova tudo o que recebe. O corte deve ser recalculado sobre as propostas do próprio banco.</div>
+<div class="legenda">Casos por grupo = 7,84 × [p0(1−p0) + p1(1−p1)] ÷ (p0 − p1)² (80% de poder, 5% de alarme falso). p0: inadimplência do SCR; no piloto, usar a inadimplência interna. O efeito esperado não é efeito comprovado: é o que o piloto testa.</div>
+<h3>Metas</h3>
+<div class="tabwrap"><table><tr><th>Meta</th><th>Dono</th><th>Hoje</th><th>12 meses</th><th>Referência final</th></tr>
+<tr><td>Propostas de MEIs, MEs e EPPs pontuadas pela nota</td><td>Gerência de crédito</td><td>0%</td><td>100% no piloto</td><td>100% da carteira, se o piloto confirmar</td></tr>
+<tr><td>Inadimplência das concessões do piloto (grupo com nota × grupo atual)</td><td>Diretoria de crédito</td><td>medir no banco</td><td>leitura só ao fim do piloto (ago/2028, se o volume permitir)</td><td>15% a 30% menor</td></tr>
+<tr><td>Bons clientes nas novas concessões</td><td>Diretoria comercial</td><td>medir no banco</td><td>definida após a leitura do piloto 2 (mai/2027)</td><td>definida após a leitura do piloto 2</td></tr></table></div>
+</section>
+
+<section class="bloco" id="s5"><div class="etq">Relatório 5 e anexos</div><h2 class="tit">Limites e método</h2>
+<ul style="font-size:13.5px;margin:0;padding-left:18px">
+<li>O alvo é dívida com a União, não com bancos; a calibragem com o SCR é por segmento.</li>
+<li>Validação num só período (mai/2023 a out/2026), com empresas diferentes no treino e no teste.</li>
+<li>Regras de política fora da nota: menos de 1 ano, exclusão do Simples ou dívida em cobrança levam a análise manual e nunca contam como bom cliente.</li>
+<li>O capital social é declarado pela própria empresa e não é conferido pela Receita.</li>
+<li>O cadastro público não traz faturamento, balanço nem histórico bancário: a nota é um filtro inicial.</li>
+<li>O alvo só vê dívida ainda ativa em jun/2026 (quitações somem): a taxa de nova dívida é um piso.</li>
+<li>Usar a UF na nota exige parecer do jurídico (explicabilidade e não discriminação) antes do piloto.</li>
+<li>Fechamentos dependem do calendário da Receita (inaptidão cerca de dois anos depois); épocas comparadas pelo encerramento voluntário.</li>
+<li>Crédito por município não é público; validação externa só com o Sebrae (IBGE não feita).</li>
+<li>Associação não é causa: os sinais indicam risco maior ou menor, não o motivo do fechamento.</li>
+</ul>
+<p style="font-size:13.5px">Método completo: <a href="RELATORIO.pdf">relatório (PDF)</a> · <a href="metodo/P4_nota_de_risco.md">como a nota é calculada</a> · <a href="metodo/C2_empresas_esperadas.md">empresas esperadas por cidade</a> · <a href="DIARIO_DECISOES.md">diário de decisões</a>.</p>
+</section>
+</main>
+<footer>Estudo independente de Fabian Aliatti Mayer, com execução apoiada por IA. Fontes: Receita Federal (CNPJ, mai/2023 e out/2026), PGFN (mar/2023 e jun/2026), Banco Central (SCR.data e Selic), IBGE. Dados de sócios usados só de forma agregada.</footer>
+<div class="tt" id="tt"></div>
+<div class="mini" id="mini"></div>
+<script id="dados" type="application/json">__DADOS__</script>
+<script>
+const D = JSON.parse(document.getElementById('dados').textContent);
+const $ = s => document.querySelector(s);
+// mesma regra de arredondamento do Python (valor binário exato, como f'{x:.1f}'), para o painel bater com o relatório
+const br = (x, c = 1) => { if (x === null || x === undefined || Number.isNaN(Number(x))) return '—'; const a = Math.abs(Number(x)), n = a * 10 ** c, fl = Math.floor(n);
+  const ex = a.toFixed(c + 40).split('.')[1] || '', empate = /^50*$/.test(ex.slice(c));   /* expansão decimal exata do valor binário */
+  let t = empate ? ((fl % 2 === 0 ? fl : fl + 1) / 10 ** c).toFixed(c) : a.toFixed(c);   /* empate exato: par mais próximo, como o Python */ if (Number(t) === 0) t = (0).toFixed(c); const [i, d] = t.split('.'); return (Number(x) < 0 && Number(t) !== 0 ? '−' : '') + i.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (d ? ',' + d : ''); };
+const COR = {MEI: 'var(--mei)', ME: 'var(--me)', EPP: 'var(--epp)', A: 'var(--fA)', B: 'var(--fB)', C: 'var(--fC)', D: 'var(--fD)', E: 'var(--fE)'};
+const tt = $('#tt');
+function dica(el, html) { el.addEventListener('mousemove', e => { tt.innerHTML = html; tt.style.display = 'block'; tt.style.left = Math.min(e.clientX + 12, innerWidth - 270) + 'px'; tt.style.top = (e.clientY + 12) + 'px'; }); el.addEventListener('mouseleave', () => tt.style.display = 'none'); }
+function tabela(cols, rows) { // cols: [rótulo, chave, casas|null, numérico]
+  let h = '<div class="tabwrap"><table><tr>' + cols.map(c => `<th class="${c[3] ? 'n' : ''}">${c[0]}</th>`).join('') + '</tr>';
+  for (const r of rows) h += '<tr>' + cols.map(c => { const v = typeof c[1] === 'function' ? c[1](r) : r[c[1]]; return `<td class="${c[3] ? 'n' : ''}">${c[2] !== null && c[2] !== undefined && typeof v === 'number' ? br(v, c[2]) : (v ?? '—')}</td>`; }).join('') + '</tr>';
+  return h + '</table></div>';
+}
+const NS = 'http://www.w3.org/2000/svg';
+function el(tag, at, pai) { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); if (pai) pai.appendChild(e); return e; }
+// barras horizontais: itens [{rot, v, cor, dica, ref}] ; ref = linha de referência
+function barrasH(alvo, itens, {max, min = 0, ref, casas = 1, suf = '%', larg} = {}) {
+  larg = larg || Math.max(300, Math.min(alvo.clientWidth || 560, 900)); alvo._redesenho = () => barrasH(alvo, itens, {max, min, ref, casas, suf});
+  const h = itens.length * 26 + 26, esq = Math.min(larg * 0.42, Math.min(210, Math.max(...itens.map(i => i.rot.length)) * 6.6 + 10));
+  const svg = el('svg', {viewBox: `0 0 ${larg} ${h}`, width: larg, height: h, role: 'img', style: 'max-width:100%;height:auto'}); const m = max || Math.max(...itens.map(i => i.v)) * 1.15;
+  const x = v => esq + (larg - esq - 60) * (v - min) / (m - min);
+  if (ref !== undefined) { el('line', {x1: x(ref), x2: x(ref), y1: 4, y2: h - 18, stroke: '#6B7B80', 'stroke-dasharray': '4 3'}, svg); el('text', {x: x(ref) + 3, y: h - 6, 'font-size': 10, fill: '#6B7B80'}, svg).textContent = br(ref, casas === 0 ? 0 : 1) + ' = referência'; }
+  if (min) el('text', {x: esq, y: h - 6, 'font-size': 10, fill: '#6B7B80'}, svg).textContent = 'eixo começa em ' + br(min, 2);
+  itens.forEach((it, i) => { const y = 6 + i * 26;
+    el('text', {x: esq - 6, y: y + 14, 'text-anchor': 'end', 'font-size': 11.5, fill: '#0E3B43'}, svg).textContent = it.rot;
+    const r = el('rect', {x: esq, y: y + 2, width: Math.max(1, x(it.v) - esq), height: 16, rx: 3, fill: it.cor || 'var(--tinta)'}, svg);
+    el('text', {x: x(it.v) + 4, y: y + 14, 'font-size': 11, fill: '#3E5A60', 'font-family': 'IBM Plex Mono'}, svg).textContent = br(it.v, casas) + suf;
+    if (it.dica) dica(r, it.dica); });
+  alvo.innerHTML = ''; alvo.appendChild(svg);
+}
+// colunas agrupadas: grupos [{rot, series:[{nome, v, cor}]}]
+function colunas(alvo, grupos, {max, casas = 1, suf = '%', larg, alt = 230, legenda = true, rotx, ref} = {}) {
+  const minimo = larg || 0; larg = Math.max(minimo, Math.max(300, Math.min(alvo.clientWidth || 560, 900))); alvo._redesenho = () => colunas(alvo, grupos, {max, casas, suf, larg: minimo || undefined, alt, legenda, rotx, ref});
+  const estreito = (larg - 40) / grupos.length < 40 && !rotx; if (estreito) { larg = Math.max(larg, 30 + 42 * grupos.length); alvo.style.overflowX = 'auto'; }   /* celular com muitos grupos: rolagem dentro do cartão */
+  const svg = el('svg', {viewBox: `0 0 ${larg} ${alt + (rotx ? 16 : 0)}`, width: larg, height: alt + (rotx ? 16 : 0), role: 'img', style: estreito ? 'max-width:none;height:auto' : 'max-width:100%;height:auto'}); const ns = grupos[0].series.length;
+  const m = max || Math.max(...grupos.flatMap(g => g.series.map(s => s.v))) * 1.15; const esq = 30, gw = (larg - esq - 10) / grupos.length, gira = gw < 70 && !rotx;   /* muitos grupos: rótulos inclinados */
+  const base = alt - (gira ? 86 : 34), topo = 26;
+  const y = v => base - (base - topo) * v / m; const bw = Math.min(34, (gw - 14) / ns);
+  [0, .25, .5, .75, 1].forEach(t => { const v = m * t; el('line', {x1: esq, x2: larg - 6, y1: y(v), y2: y(v), stroke: '#E8EEEE'}, svg); el('text', {x: esq - 4, y: y(v) + 3, 'text-anchor': 'end', 'font-size': 9.5, fill: '#6B7B80'}, svg).textContent = br(v, m <= 3 ? 2 : 0); });
+  if (ref !== undefined) { el('line', {x1: esq, x2: larg - 6, y1: y(ref), y2: y(ref), stroke: '#0E3B43', 'stroke-dasharray': '4 3', 'stroke-width': 1.2}, svg); }
+  grupos.forEach((g, i) => { const x0 = esq + i * gw + (gw - ns * bw - (ns - 1) * 2) / 2;
+    g.series.forEach((s, j) => { if (s.v === null || s.v === undefined) return; const x = x0 + j * (bw + 2);
+      const r = el('rect', {x, y: y(s.v), width: bw, height: base - y(s.v), rx: 3, fill: s.cor, stroke: s.borda || 'none', 'stroke-width': s.borda ? 1.2 : 0, 'fill-opacity': s.vazio ? 0.18 : 1}, svg);
+      el('text', {x: x + bw / 2, y: y(s.v) - 4, 'text-anchor': 'middle', 'font-size': gw < 46 ? 7.5 : 9.5, fill: '#3E5A60', 'font-family': 'IBM Plex Mono', stroke: '#fff', 'stroke-width': 3, 'paint-order': 'stroke'}, svg).textContent = br(s.v, casas);
+      dica(r, `<b>${g.rot}</b><br>${s.nome}: ${br(s.v, casas)}${suf}`);
+      if (s.marca !== undefined) el('line', {x1: x - 2, x2: x + bw + 2, y1: y(s.marca), y2: y(s.marca), stroke: '#0E3B43', 'stroke-width': 3}, svg); });
+    const tx = esq + i * gw + gw / 2, ty = base + 13; const t = el('text', gira ? {x: tx, y: ty, 'text-anchor': 'end', 'font-size': 9.5, fill: '#0E3B43', transform: `rotate(-38 ${tx} ${ty})`} : {x: tx, y: base + 15, 'text-anchor': 'middle', 'font-size': gw < 60 ? 9 : 11, fill: '#0E3B43'}, svg); t.textContent = (r => gira && r.length > 24 ? r.slice(0, 23) + '…' : r)(g.rot.replace('acima de R$', '> R$').replace('até R$', '≤ R$')); if (!gira && gw < 46) { t.textContent = g.rot.replace(/^20(\d\d)\//, '$1/'); t.setAttribute('font-size', 8); }   /* celular: ano com 2 dígitos */
+    if (rotx) { el('text', {x: esq + i * gw + gw / 2, y: base + 28, 'text-anchor': 'middle', 'font-size': gw < 46 ? 8 : 9.5, fill: '#6B7B80'}, svg).textContent = rotx[i]; } });
+  if (legenda) { let lx = esq; grupos[0].series.forEach(s => { el('rect', {x: lx, y: 6, width: 12, height: 10, rx: 2, fill: s.cor, 'fill-opacity': s.vazio ? 0.18 : 1, stroke: s.borda || 'none'}, svg); const t = el('text', {x: lx + 16, y: 15, 'font-size': 11, fill: '#0E3B43'}, svg); t.textContent = s.nome; lx += 26 + s.nome.length * 6.4; }); }
+  alvo.innerHTML = ''; alvo.appendChild(svg);
+}
+// linha simples: pontos [{x, y, rot}]
+function linha(alvo, pts, {max, casas = 1, larg, alt = 230, rotx = 'x', roty = ''} = {}) {
+  larg = larg || Math.max(300, Math.min(alvo.clientWidth || 560, 900)); alvo._redesenho = () => linha(alvo, pts, {max, casas, alt, rotx, roty});
+  const svg = el('svg', {viewBox: `0 0 ${larg} ${alt}`, width: larg, height: alt, role: 'img', style: 'max-width:100%;height:auto'}); const esq = 36, base = alt - 34, topo = 14;
+  const xs = pts.map(p => p.x), mx = Math.max(...xs), mn = Math.min(...xs), m = max || Math.max(...pts.map(p => p.y)) * 1.2;
+  const X = v => esq + (larg - esq - 20) * (v - mn) / (mx - mn), Y = v => base - (base - topo) * v / m;
+  [0, .25, .5, .75, 1].forEach(t => { const v = m * t; el('line', {x1: esq, x2: larg - 10, y1: Y(v), y2: Y(v), stroke: '#E8EEEE'}, svg); el('text', {x: esq - 4, y: Y(v) + 3, 'text-anchor': 'end', 'font-size': 9.5, fill: '#6B7B80'}, svg).textContent = br(v, 0); });
+  el('polyline', {points: pts.map(p => `${X(p.x)},${Y(p.y)}`).join(' '), fill: 'none', stroke: '#0E3B43', 'stroke-width': 2}, svg);
+  pts.forEach(p => { const c = el('circle', {cx: X(p.x), cy: Y(p.y), r: 5, fill: '#0E3B43', stroke: '#fff', 'stroke-width': 2}, svg); dica(c, p.dica);
+    el('text', {x: X(p.x), y: Y(p.y) - 9, 'text-anchor': 'middle', 'font-size': 9.5, fill: '#3E5A60', 'font-family': 'IBM Plex Mono'}, svg).textContent = br(p.y, casas);
+    el('text', {x: X(p.x), y: base + 15, 'text-anchor': 'middle', 'font-size': 10.5, fill: '#0E3B43'}, svg).textContent = p.rot; });
+  el('text', {x: larg / 2, y: alt - 3, 'text-anchor': 'middle', 'font-size': 10.5, fill: '#6B7B80'}, svg).textContent = rotx;
+  alvo.innerHTML = ''; alvo.appendChild(svg);
+}
+// ---------- resumo ----------
+const G = Object.fromEntries(D.p1_grupo.map(r => [r.grupo, r]));
+const R1 = D.p1_risco.filter(r => r.ano_de_vida === 1); const rMEI = R1.find(r => r.grupo === 'MEI').risco_baixa_voluntaria_pct;
+const F = Object.fromEntries(D.p4_faixas.map(r => [r.faixa, r])); const CV = Object.fromEntries(D.p4_curva.map(r => [r.aprovacao_pct, r]));
+const bonsTot = D.p3_segmentos.reduce((a, r) => a + r.bons, 0), empTot = D.p3_segmentos.reduce((a, r) => a + r.empresas, 0);
+const pri = D.p3_segmentos.filter(r => r.pouco_atendido && r.inadimplencia_ate_nacional), pa = D.p3_segmentos.filter(r => r.pouco_atendido);
+const cres = D.c4_destino.find(r => r.destino.startsWith('2'));
+$('#kpis').innerHTML = [[br(G.MEI.sobrevive_5a) + '%', 'MEIs abertos após 5 anos (ME ' + br(G.ME.sobrevive_5a) + '%, EPP ' + br(G.EPP.sobrevive_5a) + '%)'],
+ [br(rMEI) + '%', 'encerramento voluntário de MEIs no 1º ano'], [br(CV[100].alvo_aprovados_pct) + '%', 'ativas em mai/2023 com nova dívida ativa ainda aberta em jun/2026'],
+ [br(F.A.alvo_real_pct) + '% × ' + br(F.E.alvo_real_pct) + '%', 'nova dívida na faixa A × faixa E'], [br(bonsTot / 1e6) + ' mi', 'bons clientes hoje (' + br(100 * bonsTot / empTot) + '% dos MEIs, MEs e EPPs; A/B nas duas notas e sem regra de política)'],
+ [pa.length + ' / ' + pri.length, 'segmentos pouco atendidos / prioritários'], [br(cres.pct) + '%', 'MEIs de mai/2023 que cresceram (' + br(cres.nova_divida_pct) + '% de nova dívida, taxa baixa em parte por construção: seguir no Simples exige estar em dia)']]
+ .map(k => `<div class="kpi"><b>${k[0]}</b><span>${k[1]}</span></div>`).join('');
+const P5 = D.pilotos; $('#d_p1').textContent = br(P5.find(r => r.porte === 'Micro' && r.cenario.startsWith('otimista')).concessoes_por_grupo, 0) + ' (MEIs e MEs, efeito otimista) a ' + br(P5.find(r => r.porte === 'Micro' && r.cenario.startsWith('conservador')).concessoes_por_grupo, 0) + ' (efeito conservador)';
+$('#d_p2').textContent = br(P5.find(r => r.cenario.startsWith('conversão 2%')).concessoes_por_grupo, 0);
+document.querySelectorAll('.dyn').forEach(e => { const k = e.dataset.k; e.textContent = k === 'fA' ? br(F.A.alvo_real_pct) + '%' : k === 'fE' ? br(F.E.alvo_real_pct) + '%' : k === 'npa' ? pa.length : k === 'npri' ? pri.length : k === 'bpri' ? br(pri.reduce((a, r) => a + r.bons, 0) / 1000, 0) + ' mil' : k === 'peso' ? br(100 * pri.filter(r => r.porte_scr === 'Micro' && ((r.uf === 'SP' && r.secao === 'H') || (r.uf === 'MG' && r.secao === 'F'))).reduce((a, r) => a + r.bons, 0) / pri.reduce((a, r) => a + r.bons, 0), 0) + '%' : k === 'sens5' ? D.p3_sens.find(r => r.tolerancia_pontos === 5).prioritarios : ''; });
+// ---------- 1.1 ----------
+colunas($('#g_sobrev'), [['1 ano', 'sobrevive_1a'], ['3 anos', 'sobrevive_3a'], ['5 anos', 'sobrevive_5a'], ['10 anos*', 'sobrevive_10a']].map(([rot, k]) => ({rot, series: ['MEI', 'ME', 'EPP'].map(p => ({nome: p, v: G[p][k], cor: COR[p]}))})), {max: 110});
+$('#t_sobrev').innerHTML = tabela([['Porte', 'grupo'], ['Empresas (2016–20)', 'empresas_2016_2020', 0, 1], ['1 ano', 'sobrevive_1a', 1, 1], ['3 anos', 'sobrevive_3a', 1, 1], ['5 anos', 'sobrevive_5a', 1, 1], ['5 anos só voluntária', 'sobrevive_5a_so_baixa_voluntaria', 1, 1], ['10 anos*', 'sobrevive_10a', 1, 1]], D.p1_grupo);
+colunas($('#g_risco'), [1, 2, 3, 4, 5].map(a => ({rot: a + 'º ano', series: ['MEI', 'ME', 'EPP'].map(p => ({nome: p, v: D.p1_risco.find(r => r.grupo === p && r.ano_de_vida === a).risco_baixa_voluntaria_pct, cor: COR[p]}))})));
+$('#t_risco').innerHTML = tabela([['Porte', 'grupo'], ['Ano de vida', 'ano_de_vida', 0, 1], ['Risco (%)', 'risco_baixa_voluntaria_pct', 2, 1]], D.p1_risco);
+function desenhaSetor() { const p = $('#f_porte_setor').value; const rows = D.p1_secao.filter(r => r.grupo === p).sort((a, b) => b.sobrevive_5a - a.sobrevive_5a);
+  const media = G[p].sobrevive_5a;
+  barrasH($('#g_setor'), rows.map(r => ({rot: D.secoes[r.secao] || r.secao, v: r.sobrevive_5a, cor: r.sobrevive_5a < media - 3 ? 'var(--risco)' : 'var(--tinta)', dica: `<b>${D.secoes[r.secao]}</b><br>${br(r.empresas_2016_2020, 0)} empresas<br>5 anos: ${br(r.sobrevive_5a)}%<br>fechou com dívida: ${br(r.fechou_com_divida_5a)}%`})), {max: 100, ref: media});
+  $('#t_setor').innerHTML = tabela([['Setor', r => D.secoes[r.secao]], ['Empresas', 'empresas_2016_2020', 0, 1], ['1 ano', 'sobrevive_1a', 1, 1], ['3 anos', 'sobrevive_3a', 1, 1], ['5 anos', 'sobrevive_5a', 1, 1], ['Com dívida', 'fechou_com_divida_5a', 1, 1]], rows); }
+$('#f_porte_setor').onchange = desenhaSetor; desenhaSetor();
+const MC = D.municipios.cols, MUN = D.municipios.rows.map(r => Object.fromEntries(MC.map((c, i) => [c, r[i]])));
+const UFS = [...new Set(MUN.map(m => m.uf))].sort();
+$('#f_uf_mun').innerHTML = '<option value="">Todas</option>' + UFS.map(u => `<option ${u === 'RS' ? 'selected' : ''}>${u}</option>`).join('');
+function desenhaMun() { const uf = $('#f_uf_mun').value, q = $('#f_busca_mun').value.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''), ord = $('#f_ord_mun').value;
+  const mn = +$('#f_min_mun').value; let rows = MUN.filter(m => (m.empresas_ativas ?? 0) >= mn && (!uf || m.uf === uf) && (!q || m.municipio.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').includes(q)));
+  const asc = ord === 'razao_fechamento'; rows.sort((a, b) => (a[ord] === null) - (b[ord] === null) || (asc ? a[ord] - b[ord] : b[ord] - a[ord]));
+  $('#tit_mun').textContent = `Municípios ${uf ? 'de ' + uf : 'do Brasil'} (${br(rows.length, 0)})`;
+  $('#t_mun').innerHTML = tabela([['Município', r => r.municipio + ' – ' + r.uf], ['População', 'populacao', 0, 1], ['Empresas ativas', 'empresas_ativas', 0, 1], ['Bons clientes (%)', r => r.bons_pct === null ? null : 100 * r.bons_pct, 1, 1],
+    ['Bons por mil hab.', 'bons_por_mil_hab', 1, 1], ['Sobrevive 5 anos (%)', 'sobrevive_5a_pct', 1, 1], ['Fechamento × esperado', r => r.razao_fechamento === null ? null : br(r.razao_fechamento, 2) + ' ± ' + br(r.margem_95_razao, 2), null, 1], ['Risco médio de nova dívida (%)', r => r.risco_divida_medio === null ? null : 100 * r.risco_divida_medio, 1, 1]], rows.slice(0, 400)) +
+    (rows.length > 400 ? '<div class="legenda" style="padding:6px">Mostrando os 400 primeiros; use a busca ou a UF.</div>' : ''); }
+['#f_uf_mun', '#f_ord_mun', '#f_min_mun'].forEach(s => $(s).onchange = desenhaMun); $('#f_busca_mun').oninput = desenhaMun; desenhaMun();
+const UFR = [...D.p1_uf].sort((a, b) => a.razao_fechamento - b.razao_fechamento);
+barrasH($('#g_uf'), UFR.map(r => ({rot: r.uf, v: r.razao_fechamento, cor: r.razao_fechamento > 1.025 ? 'var(--risco)' : r.razao_fechamento < 0.975 ? 'var(--verde)' : 'var(--fC)', dica: `<b>${r.uf}</b><br>sobrevive 5 anos: ${br(r.sobrevive_5a_pct)}%<br>fechamento × esperado: ${br(r.razao_fechamento, 2)}`})), {max: 1.15, min: 0.85, ref: 1, casas: 2, suf: ''});
+$('#t_uf').innerHTML = tabela([['UF', 'uf'], ['Empresas', 'empresas', 0, 1], ['Sobrevive 5 anos (%)', 'sobrevive_5a_pct', 1, 1], ['Fechamento × esperado', 'razao_fechamento', 2, 1], ['Encerramento voluntário × esperado', 'razao_baixa_vol', 2, 1]], UFR);
+// ---------- 1.2 ----------
+const CAR = [...new Set(D.p2_fatores.map(r => r.caracteristica))].filter(c => !c.startsWith('porte') && !c.startsWith('idade') && !c.startsWith('situação'));
+$('#f_carac').innerHTML = CAR.map(c => `<option ${c.startsWith('dívida') ? 'selected' : ''}>${c}</option>`).join('');
+const limpa = v => String(v).replace(/^\d+ /, '').replace(/^false$/, 'não (excluída)').replace(/^true$/, 'sim').replace(/^None$|^null$/, 'nunca optou');
+function desenhaFat() { const c = $('#f_carac').value; const rows = D.p2_fatores.filter(r => r.caracteristica === c && r.empresas >= 1000);
+  const fixo = c === 'no Simples Nacional' ? (v => ({'false': 'excluída do Simples', 'true': 'no Simples', 'null': 'nunca optou'}[String(v)] || v)) : limpa;
+  colunas($('#g_fatores'), rows.map(r => ({rot: fixo(r.valor).replace(/^[A-Z]\d?(\/[A-Z])? /, '').replace(/^Alojamento$/, 'Hotéis e pousadas'), series: [{nome: 'fecharam', v: 100 * r.razao, cor: 'var(--tinta)'}, {nome: 'ficaram com nova dívida ativa', v: 100 * r.razao_nova_divida, cor: 'var(--risco)'}]})), {casas: 0, suf: '', ref: 100, alt: 300, max: [160, 200, 400, 800].find(v => v >= 110 * Math.max(...rows.flatMap(r => [r.razao, r.razao_nova_divida]))) || 800});
+  $('#t_fatores').innerHTML = tabela([['Valor', r => fixo(r.valor)], ['Empresas', 'empresas', 0, 1], ['Fechou (%)', 'fechou_pct', 1, 1], ['Fechar × esperado', 'razao', 2, 1], ['Nova dívida (%)', 'nova_divida_pct', 1, 1], ['Nova dívida × esperado', 'razao_nova_divida', 2, 1]], rows); }
+$('#f_carac').onchange = desenhaFat; desenhaFat();
+colunas($('#g_c3'), D.c3.map(r => ({rot: r.semestre.replace('-S', '/'), series: [{nome: 'encerramento voluntário em 3 anos (1 = esperado)', v: r.razao_vol_3a, cor: r.epoca === 'antes' ? 'var(--tinta)' : 'var(--ambar)'}]})), {max: 1.2, casas: 2, suf: '', ref: 1, rotx: D.c3.map(r => br(r.selic_12m_seguintes)), alt: 240});
+// ---------- 1.3 ----------
+function desenhaFaixas() { const n = $('#f_nota').value, rows = n === 'divida' ? D.p4_faixas : D.p4_faixas_fechou;
+  colunas($('#g_faixas'), rows.map(r => ({rot: 'Faixa ' + r.faixa, series: n === 'divida' ? [{nome: 'nova dívida (real)', v: r.alvo_real_pct, cor: COR[r.faixa], marca: r.alvo_previsto_pct}, {nome: 'fechou (real)', v: r.fechou_pct, cor: 'var(--tinta)', vazio: true, borda: '#0E3B43'}] : [{nome: 'fechou (real)', v: r.alvo_real_pct, cor: COR[r.faixa], marca: r.alvo_previsto_pct}, {nome: 'nova dívida (real)', v: r.nova_divida_pct, cor: 'var(--risco)', vazio: true, borda: '#B03A2E'}]})), {max: n === 'divida' ? 60 : 80});
+  $('#t_faixas').innerHTML = tabela([['Faixa', r => `<span class="faixa f${r.faixa}">${r.faixa}</span>`], ['Empresas', 'empresas', 0, 1], ['Nota de', 'nota_min', 1, 1], ['até', 'nota_max', 1, 1], ['Previsto (%)', 'alvo_previsto_pct', 1, 1], ['Real (%)', 'alvo_real_pct', 1, 1], ['Nova dívida (%)', 'nova_divida_pct', 1, 1], ['Fechou (%)', 'fechou_pct', 1, 1], ['% dos maus', 'participacao_maus_pct', 1, 1]], rows) + '<div class="legenda">Traço escuro sobre a barra: valor previsto pela nota.</div>'; }
+$('#f_nota').onchange = desenhaFaixas; desenhaFaixas();
+linha($('#g_curva'), D.p4_curva.map(r => ({x: r.aprovacao_pct, y: r.alvo_aprovados_pct, rot: r.aprovacao_pct + '%', dica: `Aprovando ${r.aprovacao_pct}%: nota de corte ${br(r.nota_corte)}<br>nova dívida entre aprovados ${br(r.alvo_aprovados_pct)}%<br>${br(r.maus_evitados_pct)}% dos maus ficam de fora`})), {max: 20, rotx: '% de propostas aprovadas (as de melhor nota)'});
+$('#t_curva').innerHTML = tabela([['Aprovação (%)', 'aprovacao_pct', 0, 1], ['Nota de corte', 'nota_corte', 1, 1], ['Nova dívida entre aprovados (%)', 'alvo_aprovados_pct', 1, 1], ['Maus deixados de fora (%)', 'maus_evitados_pct', 1, 1]], D.p4_curva);
+function desenhaMatriz() { const k = $('#f_matriz').value; let h = '<table><tr><th>Dívida \\ Fechamento</th>' + 'ABCDE'.split('').map(f => `<th class="n"><span class="faixa f${f}">${f}</span></th>`).join('') + '</tr>';
+  for (const a of 'ABCDE') { h += `<tr><td><span class="faixa f${a}">${a}</span></td>`; for (const b of 'ABCDE') { const r = D.p4_matriz.find(x => x.faixa_divida === a && x.faixa_fechamento === b); const bom = 'AB'.includes(a) && 'AB'.includes(b); h += `<td class="n" style="${bom ? 'background:#E3F1E9;font-weight:600' : ''}">${br(r[k])}</td>`; } h += '</tr>'; }
+  $('#t_matriz').innerHTML = '<div class="tabwrap">' + h + '</table></div>'; }
+$('#f_matriz').onchange = desenhaMatriz; desenhaMatriz();
+const SM = {}; D.p4_setor.forEach(r => { SM[r.grupo] = SM[r.grupo] || {secao: r.grupo, n: r.n_teste}; SM[r.grupo][r.modelo.startsWith('geral') ? 'geral' : 'proprio'] = r.auc; });
+$('#t_setor_modelo').innerHTML = '<div class="rolagem" style="max-height:300px">' + tabela([['Setor', r => D.secoes[r.secao]], ['Empresas no teste', 'n', 0, 1], ['Geral', 'geral', 3, 1], ['Próprio do setor', 'proprio', 3, 1]], Object.values(SM)) + '</div>';
+// ---------- 1.4 ----------
+const SECS = [...new Set(D.p3_segmentos.map(r => r.secao))].sort();
+$('#f_uf_seg').innerHTML = '<option value="">Todas</option>' + [...new Set(D.p3_segmentos.map(r => r.uf))].sort().map(u => `<option>${u}</option>`).join('');
+$('#f_sec_seg').innerHTML = '<option value="">Todos</option>' + SECS.map(s => `<option value="${s}">${D.secoes[s]}</option>`).join('');
+function desenhaSeg() { const uf = $('#f_uf_seg').value, sc = $('#f_sec_seg').value, pt = $('#f_porte_seg').value, tp = $('#f_tipo_seg').value;
+  let rows = D.p3_segmentos.filter(r => (!uf || r.uf === uf) && (!sc || r.secao === sc) && (!pt || r.porte_scr === pt) && (tp === 'todos' || (tp === 'pa' ? r.pouco_atendido : r.pouco_atendido && r.inadimplencia_ate_nacional)));
+  rows.sort((a, b) => a.indice_atendimento - b.indice_atendimento);
+  $('#tit_seg').textContent = `${tp === 'pri' ? 'Segmentos prioritários' : tp === 'pa' ? 'Segmentos pouco atendidos' : 'Todos os segmentos'} (${rows.length})`;
+  $('#t_seg').innerHTML = rows.length ? tabela([['UF', 'uf'], ['Setor', r => D.secoes[r.secao]], ['Porte', r => r.porte_scr === 'Pequeno' ? 'EPP' : 'MEI e ME (' + br(100 * r.pct_mei, 0) + '% MEI)'], ['Atendimento', 'indice_atendimento', 3, 1],
+    ['Inadimplência (%)', r => 100 * r.inad_scr, 1, 1], ['Inad. Brasil (%)', r => 100 * r.inad_br, 1, 1], ['Situação', r => r.pouco_atendido ? (r.inadimplencia_ate_nacional ? '<b style="color:var(--verde)">prioritário</b>' : 'pouco atendido, inadimplência maior') : (r.comparavel ? '' : 'mistura MEI/ME diferente')],
+    ['Bons clientes', 'bons', 0, 1], ['Bons (%)', r => 100 * r.bons_pct, 1, 1], ['Bons esperados (%)', r => 100 * r.bons_pct_esperado, 1, 1], ['Empresas', 'empresas', 0, 1], ['Crédito por empresa (R$)', 'credito_por_empresa', 0, 1]], rows) : '<div class="legenda" style="padding:8px">Nenhum segmento com esses filtros.</div>'; }
+['#f_uf_seg', '#f_sec_seg', '#f_porte_seg', '#f_tipo_seg'].forEach(s => $(s).onchange = desenhaSeg); desenhaSeg();
+const DES = {'1': ['Continua MEI', 'var(--fC)'], '2': ['Cresceu (segue no Simples)', 'var(--verde)'], '3': ['Saiu do MEI e do Simples', 'var(--risco)'], '4': ['Fechou', 'var(--tinta)']};
+barrasH($('#g_mei'), D.c4_destino.filter(r => DES[r.destino[0]]).map(r => ({rot: DES[r.destino[0]][0], v: r.pct, cor: DES[r.destino[0]][1], dica: `<b>${DES[r.destino[0]][0]}</b><br>${br(r.n, 0)} MEIs<br>nova dívida ativa: ${br(r.nova_divida_pct)}%`})), {max: 60});
+function desenhaC4() { const v = $('#f_c4').value, rows = [...(v === 'setor' ? D.c4_setor : D.c4_uf)].filter(r => r.meis_mai2023 >= 1000).sort((a, b) => b.cresceram_pct_dos_ativos - a.cresceram_pct_dos_ativos);
+  $('#t_c4').innerHTML = tabela([[v === 'setor' ? 'Setor' : 'UF', r => v === 'setor' ? D.secoes[r.secao] : r.uf], ['MEIs em mai/2023', 'meis_mai2023', 0, 1], ['Cresceram', 'cresceram', 0, 1], ['% dos ativos', 'cresceram_pct_dos_ativos', 1, 1], ['Nova dívida dos que cresceram (%)', 'nova_divida_cresceram_pct', 1, 1]], rows); }
+$('#f_c4').onchange = desenhaC4; desenhaC4();
+{ const fx = k => D.p4_fluxo.find(r => r.etapa.startsWith(k)); const seg = [['Recusa (faixa E)', fx('recusa').participacao_pct, 'var(--risco)'], ['Análise manual', fx('análise manual').participacao_pct, 'var(--ambar)'], ['Aprovação pela nota', fx('aprovação').participacao_pct, 'var(--verde)']];
+  const nRec = Math.round(10 * fx('recusa').participacao_pct), nMau = Math.round(10 * fx('recusa').participacao_pct * fx('recusa').nova_divida_pct / 100);
+  $('#g_fluxo_mil').textContent = `A cada 1.000 propostas: ${nRec} recusadas (${nMau} receberiam nova dívida e ${nRec - nMau} não), ${Math.round(10 * fx('análise manual').participacao_pct)} para analistas e ${Math.round(10 * fx('aprovação').participacao_pct)} aprovadas. Convertida pelo fator do SCR, recusar compensa se a perda com um inadimplente passar de 5 a 6 vezes a margem de um bom cliente (contra aprovar todas, não contra a política atual; relatório, sumário).`;
+  $('#g_fluxo').innerHTML = '<div style="font-size:12px;color:var(--tinta2);margin-bottom:4px">Fluxo proposto no teste (% das propostas)</div><div style="display:flex;height:26px;border-radius:4px;overflow:hidden" role="img" aria-label="' + seg.map(x => x[0] + ' ' + br(x[1]) + '%').join(', ') + '">' + seg.map(x => `<div style="width:${x[1]}%;background:${x[2]};color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden">${br(x[1])}%</div>`).join('') + '</div><div style="display:flex;gap:14px;flex-wrap:wrap;font-size:12px;margin-top:4px">' + seg.map(x => `<span><i style="display:inline-block;width:10px;height:10px;background:${x[2]};margin-right:4px;border-radius:2px"></i>${x[0]}</span>`).join('') + '</div>'; }
+$('#t_fluxo').innerHTML = tabela([['Etapa', 'etapa'], ['% das propostas', 'participacao_pct', 1, 1], ['% das não recusadas', r => r.etapa.startsWith('recusa') ? '—' : br(r.pct_das_aprovaveis), 0, 1], ['Nova dívida (%)', 'nova_divida_pct', 1, 1], ['Fechou (%)', 'fechou_pct', 1, 1]], D.p4_fluxo);
+$('#t_viab').innerHTML = tabela([['Propostas aprováveis por mês no porte', 'propostas_aprovaveis_por_mes_no_porte', 0, 1], ['MEI e ME, otimista', 'meses_minimos_micro_otimista', 1, 1], ['MEI e ME, conservador', 'meses_minimos_micro_conservador', 1, 1], ['EPP, otimista', 'meses_minimos_pequeno_otimista', 1, 1], ['EPP, conservador', 'meses_minimos_pequeno_conservador', 1, 1]], D.pilotos_viab);
+$('#t_q1e').innerHTML = tabela([['Atividade', 'atividade'], ['Empresas (2016–20)', 'empresas_2016_2020', 0, 1], ['% MEI', 'pct_mei', 0, 1], ['Abertas após 5 anos (%)', 'sobrevive_5a', 1, 1], ['Fechamento × outras atividades', 'razao_fechamento_5a', 2, 1], ['Aberturas 2021 × 2019 (%)', r => (br(r.cresc_2021_vs_2019_pct, 0) === '0' ? '' : r.cresc_2021_vs_2019_pct > 0 ? '+' : '') + br(r.cresc_2021_vs_2019_pct, 0), 0, 1], ['Turmas da pandemia: encerramento × antes', 'razao_pandemia_vs_antes', 2, 1]], D.q1e);
+$('#t_pilotos').innerHTML = tabela([['Piloto', 'piloto'], ['Porte', r => r.porte === 'Micro' ? 'MEI e ME' : r.porte === 'Pequeno' ? 'EPP' : r.porte], ['Cenário', 'cenario'], ['Hoje (%)', 'inad_hoje_pct', 2, 1], ['Esperado (%)', 'inad_esperada_pct', 2, 1], ['Concessões por grupo', 'concessoes_por_grupo', 0, 1]], D.pilotos);
+// ---------- calculadora (tabela de pontos v2; faixas da mesma especificação do modelo, p4_tabela.py) ----------
+function faixaNum(v, x) { if (x === null || x === undefined || Number.isNaN(x)) return 'sem dado'; const f = D.calc.faixas[v]; let i = 0; while (i < f.limites.length && x >= f.limites[i]) i++; return f.rotulos[i]; }
+function categorias(r) { // r: dados brutos da empresa → faixa de cada uma das 15 variáveis
+  const c = {porte_natureza: r.porte === 'MEI' ? 'MEI' : r.porte + ' · ' + r.natureza, setor: r.div, uf: r.uf, simples: r.simples,
+    idade: faixaNum('idade', r.idade), populacao_municipio: faixaNum('populacao_municipio', r.pop), pib_per_capita_municipio: faixaNum('pib_per_capita_municipio', r.pib),
+    capital_social: faixaNum('capital_social', r.capital), atividades_secundarias: faixaNum('atividades_secundarias', r.cnae), filiais: faixaNum('filiais', r.filiais),
+    socios_pf: faixaNum('socios_pf', r.spf), socio_pj: r.spj > 0 ? 'sim' : 'não'};
+  c.historico_socios = !r.temSocioPF ? 'sem sócio pessoa física' : r.ofed > 0 ? 'sócio já fechou empresa deixando dívida' : r.oatd > 0 ? 'sócio tem outra empresa ativa com dívida' : r.ofe > 0 ? 'sócio já fechou empresa sem dívida' : r.oat > 0 ? 'sócio tem outra empresa ativa sem dívida' : 'única empresa dos sócios';
+  c.divida_ativa = !(r.dn > 0) ? 'sem dívida' : !(r.dc > 0) ? 'só parcelada ou garantida' : r.dv < 10000 ? 'em cobrança até R$ 10 mil' : r.dv < 100000 ? 'em cobrança de R$ 10 a 100 mil' : 'em cobrança acima de R$ 100 mil';
+  c.divida_previdenciaria = r.dprev > 0 ? 'sim' : 'não'; return c; }
+function pontuar(nome, C) { // mesma conta de p4_pontuar.py: faixa → junção → pontos → nota → probabilidade → faixa A–E
+  const t = D.calc[nome]; let nota = 0; const det = [];
+  for (const v of D.calc.variaveis) { const mapa = t.pontos[v], raro = mapa['outras (raras)']; let fx = C[v] ?? 'sem dado'; fx = (t.juncoes[v] || {})[fx] || fx;
+    const p = fx in mapa ? mapa[fx] : raro; nota += p; det.push({v, fx: fx in mapa ? fx : fx + ' (rara)', p}); }
+  const chance = t.ODDS * Math.pow(2, (nota - t.BASE) / t.PDO), prob = 1 / (1 + chance); let k = 0; for (const ct of t.cortes) if (nota >= ct) k++;
+  return {nota, prob, faixa: 'EDCBA'[k], det}; }
+$('#c_div').innerHTML = Object.entries(D.divisoes).map(([k, v]) => `<option value="${k}" ${k === '47' ? 'selected' : ''}>${k} — ${v}</option>`).join('');
+$('#c_uf').innerHTML = UFS.map(u => `<option ${u === 'RS' ? 'selected' : ''}>${u}</option>`).join('');
+function munOpts(sel) { const uf = $('#c_uf').value; $('#c_mun').innerHTML = MUN.filter(m => m.uf === uf && m.populacao).sort((a, b) => a.municipio.localeCompare(b.municipio, 'pt')).map(m => `<option value="${m.cod_ibge}" ${m.municipio === sel ? 'selected' : ''}>${m.municipio}</option>`).join(''); }
+$('#c_uf').onchange = () => { munOpts(); calcular(); }; munOpts('Garibaldi');
+const num = id => { const v = parseFloat($(id).value); return Number.isFinite(v) ? v : 0; };
+const NOMEV = {porte_natureza: 'Porte e natureza', setor: 'Setor', uf: 'UF', simples: 'Simples Nacional', idade: 'Idade', populacao_municipio: 'População do município', pib_per_capita_municipio: 'PIB per capita do município', capital_social: 'Capital social', atividades_secundarias: 'Atividades secundárias', filiais: 'Filiais', socios_pf: 'Sócios PF', socio_pj: 'Sócio PJ', historico_socios: 'Histórico dos sócios', divida_ativa: 'Dívida ativa', divida_previdenciaria: 'Dívida previdenciária'};
+function dadosForm() { const m = MUN.find(x => String(x.cod_ibge) === $('#c_mun').value) || {}; const ab = new Date($('#c_abertura').value + 'T12:00:00');
+  return {porte: $('#c_porte').value, natureza: $('#c_nat').value, div: $('#c_div').value, uf: $('#c_uf').value, simples: $('#c_simples').value,
+    idade: Number.isNaN(ab.getTime()) ? null : (Date.now() - ab.getTime()) / 864e5 / 365.25,
+    menos1: Number.isNaN(ab.getTime()) ? null : (() => { const u = new Date(ab); u.setFullYear(u.getFullYear() + 1); u.setHours(0, 0, 0, 0); const h = new Date(); h.setHours(0, 0, 0, 0); return u > h; })(),   /* regra pelo calendário */ pop: m.populacao ?? null, pib: m.pib_per_capita ?? null,
+    capital: num('#c_capital'), cnae: num('#c_cnae'), filiais: num('#c_filiais'), spf: num('#c_spf'), spj: num('#c_spj'), temSocioPF: num('#c_spf') > 0,
+    oat: num('#c_oat'), oatd: num('#c_oatd'), ofe: num('#c_ofe'), ofed: num('#c_ofed'), dn: num('#c_dn'), dc: num('#c_dc'), dv: num('#c_dv'), dprev: num('#c_dprev')}; }
+function erros(r) { const e = [];
+  if (r.idade === null) e.push('Informe a data de abertura.'); else if (r.idade < 0) e.push('A data de abertura está no futuro.');
+  ['capital', 'cnae', 'filiais', 'spf', 'spj', 'oat', 'oatd', 'ofe', 'ofed', 'dn', 'dc', 'dv', 'dprev'].forEach(k => { if (r[k] < 0) e.push('Há campo numérico negativo.'); });
+  if (r.dc > r.dn || r.dprev > r.dn) e.push('Inscrições em cobrança e previdenciárias não podem passar do total de inscrições.');
+  if (r.dn > 0 && !(r.dv > 0)) e.push('Informe o valor total da dívida ativa.'); if (r.dn === 0 && r.dv > 0) e.push('Há valor de dívida sem inscrições.');
+  if (r.oatd > r.oat || r.ofed > r.ofe) e.push('"Com dívida" não pode passar do total de outras empresas.');
+  if (r.porte === 'MEI' && r.natureza !== 'empresário individual') e.push('MEI é sempre empresário individual.');
+  if (r.spf === 0 && (r.oat + r.ofe) > 0) e.push('Há outras empresas de sócios sem sócio pessoa física informado.');
+  return [...new Set(e)]; }
+function regras(r) { // regras de política fora da nota (p4_tabela.REGRAS): prevalecem sobre as faixas
+  const m = []; if (r.menos1 ?? r.idade < 1) m.push('aberta há menos de 1 ano'); if (r.simples === 'excluída do Simples') m.push('excluída do Simples'); if (r.dc > 0) m.push('dívida ativa em cobrança'); return m; }
+function calcular() { const r = dadosForm(), er = erros(r);
+  if (er.length) { $('#res').innerHTML = `<div class="etq">Confira os dados</div><ul style="margin:6px 0;padding-left:18px;color:var(--risco)">${er.map(x => `<li>${x}</li>`).join('')}</ul>`; $('#mini').innerHTML = '<span>Confira os dados da ficha</span>'; return; }
+  const C = categorias(r), d = pontuar('divida', C), f = pontuar('fechamento', C);
+  const porteScr = r.porte === 'EPP' ? 'Pequeno' : 'Micro', banc = d.prob * D.fator_scr[porteScr], pos = Math.max(0, Math.min(100, (d.nota - 500) / (640 - 500) * 100));
+  const rg = regras(r), bom = 'AB'.includes(d.faixa) && 'AB'.includes(f.faixa) && !rg.length;
+  // decisão única, na ordem do fluxo proposto: divergência forte (só no sistema) → faixa E de dívida → regras de política → aprovação
+  const decisao = d.faixa === 'E' ? 'recusa (faixa E da nota de dívida), salvo divergência forte com o modelo de referência, verificada no sistema'
+    : rg.length ? 'análise manual: ' + rg.join('; ') : 'aprovação pela nota' + (f.faixa === 'E' ? ', com prazo curto (faixa E de fechamento)' : '') + ', salvo divergência forte com o modelo de referência, verificada no sistema';
+  const avisos = []; if (d.faixa !== 'E' && rg.length) avisos.push('Regra de política (vale acima da nota): nunca entra como bom cliente, qualquer que seja a faixa.');
+  $('#mini').innerHTML = `<span>Nota ${br(d.nota)} <span class="faixa f${d.faixa}">${d.faixa}</span> · fechamento <span class="faixa f${f.faixa}">${f.faixa}</span></span><a href="#res">ver</a>`;
+  $('#res').innerHTML = `<div class="etq">Nota de dívida (oficial)</div><div style="display:flex;align-items:center;gap:12px"><span class="nota">${br(d.nota)}</span><span class="faixa f${d.faixa}" style="font-size:22px;padding:4px 12px">${d.faixa}</span></div>
+  <div class="medidor"><i style="left:calc(${pos}% - 2px)"></i></div>
+  <div class="linha-res"><span>Chance de nova dívida ativa em cerca de 3 anos</span><b>${br(100 * d.prob)}%</b></div>
+  <div class="linha-res"><span>Equivalente aproximado em inadimplência bancária (${porteScr === 'Micro' ? 'MEI e ME' : 'EPP'}: × ${br(D.fator_scr[porteScr], 2)})</span><b>${br(100 * banc)}%</b></div>
+  <div class="linha-res"><span>Nota de fechamento</span><b>${br(f.nota)} <span class="faixa f${f.faixa}">${f.faixa}</span></b></div>
+  <div class="linha-res"><span>Chance de fechar em cerca de 3 anos</span><b>${br(100 * f.prob)}%</b></div>
+  <div class="linha-res"><span>Decisão no fluxo proposto</span><b>${decisao}</b></div>
+  <div class="linha-res"><span>Bom cliente (A ou B nas duas e nenhuma regra de política)?</span><b>${bom ? 'sim' : 'não'}</b></div>
+  ${avisos.length ? '<div class="aviso" style="margin-top:8px">' + avisos.join('<br>') + '</div>' : ''}
+  <details class="verdados" style="margin-top:10px"><summary>Pontos por variável (nota de dívida)</summary><div class="rolagem" style="max-height:260px">${tabela([['Variável', x => NOMEV[x.v] || x.v], ['Faixa', 'fx'], ['Pontos', 'p', 2, 1]], [...d.det].sort((a, b) => a.p - b.p))}</div></details>
+  <div class="legenda">Menos pontos = mais risco. Faixas: E abaixo de ${br(D.calc.divida.cortes[0])}, D até ${br(D.calc.divida.cortes[1])}, C até ${br(D.calc.divida.cortes[2])}, B até ${br(D.calc.divida.cortes[3])}, A acima. Filtro inicial: não substitui a análise de crédito.</div>`; }
+$('#form').addEventListener('input', calcular); $('#form').addEventListener('change', calcular);
+$('#b_exemplo').onclick = () => { $('#c_uf').value = 'RS'; munOpts('Caxias do Sul'); $('#c_div').value = '47'; $('#c_porte').value = 'MEI'; $('#c_nat').value = 'empresário individual'; $('#c_simples').value = 'optante';
+  $('#c_abertura').value = new Date(Date.now() - 1.5 * 365.25 * 864e5).toISOString().slice(0, 10); $('#c_capital').value = 3000; $('#c_cnae').value = 1; $('#c_filiais').value = 0;
+  ['#c_spf', '#c_spj', '#c_oat', '#c_oatd', '#c_ofe', '#c_ofed', '#c_dn', '#c_dv', '#c_dc', '#c_dprev'].forEach(x => $(x).value = 0); calcular(); };
+$('#b_limpar').onclick = () => { $('#form').reset(); $('#c_uf').value = 'RS'; munOpts('Garibaldi'); calcular(); };
+calcular();
+// barra fixa do celular só quando a calculadora está na tela
+new IntersectionObserver(es => es.forEach(e => $('#mini').style.visibility = e.isIntersecting ? 'visible' : 'hidden'), {threshold: 0.05}).observe($('#calc'));
+let tRes; addEventListener('resize', () => { clearTimeout(tRes); tRes = setTimeout(() => document.querySelectorAll('div').forEach(d => d._redesenho && d._redesenho()), 200); });
+</script>
+</body>
+</html>
